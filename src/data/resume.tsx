@@ -2,15 +2,15 @@ import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon } from "lucide-react";
 
 export const DATA = {
-  name: "Ben Mostafaie",
+  name: "Behnoud Mostafaie",
   initials: "BM",
   url: "https://behnoud.net",
   location: "Milan, Italy",
   locationLink: "",
   description:
-    "Software engineer with +4 years of experience in building scalable and reliable systems. I have a passion for learning and I am always looking for new challenges.",
+    "",
   summary:
-    "Started my journey in 2012 by building a website to showcase my photography. This led me to explore popular CMS platforms, after which I delved deeper into web development, gaining expertise in hosting, servers, Linux, and JavaScript.",
+    "Software engineer with +5 years of experience in building scalable and reliable systems. I have a passion for learning and I am always looking for new challenges.",
   avatarUrl: "/me.jpeg",
   skills: [
     "Typescript",
@@ -91,7 +91,7 @@ export const DATA = {
     },
     {
       company: "Upwork",
-      badges: [],
+      badges: ["Top Rated"],
       href: "",
       location: "Remote",
       title: "Freelance web developer",
@@ -128,7 +128,7 @@ export const DATA = {
       dates: "March 2024 - Jan 2025",
       active: true,
       description:
-        "Tiktaac is a comprehensive event management platform that eliminates the need for physical tickets, streamlining event operations. By digitizing all services and payments, it significantly reduces wait times and enhances the attendee experience.",
+        "Tiktaac reduced event wait times by 50% by digitizing ticket sales and payments.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -232,6 +232,12 @@ export const DATA = {
       video:"",
     },
   ],
+  testimonial: {
+    quote:
+      "Behnoud is very knowledgable, responsive, and a pleasure to work with. I found him thru the UpWork platform and quickly realized what a gem we found. He has been an integral part of the success of our website and I highly recommend him to anyone looking for WordPress web developer support. This guy really knows his stuff, and can be trusted to follow thru on time and above expectation. ",
+      author: "Chris Kydd",
+      title: "Associate Published, The Coast News, CA, USA",
+  },
   // hackathons: [
   //   {
   //     title: "Hack Western 5",

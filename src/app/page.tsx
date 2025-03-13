@@ -15,14 +15,14 @@ export default function Page() {
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
-        <div className="mx-auto w-full max-w-2xl space-y-8">
+        <div className="mx-auto w-full max-w-3xl space-y-8">
           <div className="gap-2 flex justify-between">
             <div className="flex-col flex flex-1 space-y-1.5">
               <BlurFadeText
                 delay={BLUR_FADE_DELAY}
-                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-4xl/none"
                 yOffset={8}
-                text={`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
+                text={`Hi, I'm Behnoud. I build scalable, high-performance web apps that drive results—let’s create something amazing together.`}
               />
               <BlurFadeText
                 className="max-w-[600px] md:text-xl"
@@ -49,6 +49,7 @@ export default function Page() {
           </Markdown>
         </BlurFade>
       </section>
+      
       <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
@@ -62,6 +63,28 @@ export default function Page() {
             ))}
           </div>
         </div>
+      </section>
+      <section id="testimonial">
+        <BlurFade delay={BLUR_FADE_DELAY * 3}>
+          <h2 className="text-xl font-bold">Testimonials</h2>
+        </BlurFade>
+        <BlurFade delay={BLUR_FADE_DELAY * 4} className="border rounded-lg p-4">
+          <Markdown className="prose  p-4 py-4 max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
+            {DATA.testimonial.quote}
+          </Markdown>
+          <div className="flex justify-center gap-2">
+            <div>
+              <Avatar className="size-12 border">
+                <AvatarImage src={""} alt={DATA.testimonial.author} />
+                <AvatarFallback>{DATA.testimonial.author[0]}</AvatarFallback>
+              </Avatar>
+            </div>
+            <div>
+          <p>{DATA.testimonial.author}</p>
+          <p className="text-xs italic">{DATA.testimonial.title}</p>
+          </div>
+          </div>
+        </BlurFade>
       </section>
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
@@ -207,7 +230,7 @@ export default function Page() {
                 Get in Touch
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Wanna Talk your Project? Just send me an email to{" "}
+              Let&apos;s build something amazing. Reach out now and get a free consultation! send me an email to{" "}
                 <Link
                   href={"mailto:hi@behnoud.net"}
                   className="text-blue-500 hover:underline"
