@@ -19,7 +19,6 @@ export const DATA = {
     "Node.js",
     "Nest.js",
     "MongoDB",
-    "Postgres",
     "Docker",
     "Git",
     "Linux",
@@ -27,18 +26,12 @@ export const DATA = {
     "React Native",
     "Expo",
     "AWS",
+    "Postgres",
     "CI/CD",
     "GCP",
     "REST API",
     "Microservices",
-    "Portainer",
-    "Clarity",
-    "TailwindCSS",
-    "Sentry",
     "Ai automation",
-    "Stripe",
-    "Twilio",
-    "n8n"
     
   ],
   navbar: [
