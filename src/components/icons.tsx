@@ -220,4 +220,36 @@ export const Icons = {
       />
     </svg>
   ),
+  instagram: (props: IconProps) => (
+    <svg
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <path
+        d="M16 2H8C4.68629 2 2 4.68629 2 8V16C2 19.3137 4.68629 22 8 22H16C19.3137 22 22 19.3137 22 16V8C22 4.68629 19.3137 2 16 2Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+    />
+    <path
+        d="M16 11.3701C16.1234 12.2029 15.9748 13.0533 15.5752 13.7971C15.1756 14.541 14.5437 15.1445 13.771 15.5276C12.9984 15.9107 12.1216 16.0567 11.2584 15.9476C10.3951 15.8384 9.58162 15.4788 8.92108 14.9216C8.26054 14.3643 7.78366 13.6328 7.54654 12.8151C7.30941 11.9973 7.32193 11.1273 7.58211 10.3176C7.8423 9.50781 8.33999 8.79413 9.01894 8.27392C9.69789 7.75371 10.5282 7.45078 11.3916 7.4029C12.2653 7.35436 13.1326 7.56244 13.8756 8.00269C14.6186 8.44294 15.2056 9.09458 15.5652 9.87212C15.9249 10.6497 16.0423 11.5224 16 12.3701V11.3701Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+    />
+    <path
+        d="M17.5 6.5H17.51"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+    />
+</svg>
+
+  ),
 };
