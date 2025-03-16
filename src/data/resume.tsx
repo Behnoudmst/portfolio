@@ -104,7 +104,7 @@ export const DATA = {
       start: "March 2017",
       end: "January 2018",
       description:
-        "Designed new landing pages and improved SEO of company website which led to 30% more clicks through Google ads for the same budget.",
+        "Designed new landing pages and improved SEO of company website which led to 30% more conversions from Google ads campaign for the same budget.",
     },
    
   ],
