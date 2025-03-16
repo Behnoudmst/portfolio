@@ -74,7 +74,7 @@ export const DATA = {
       company: "Log-e Srl",
       href: "",
       badges: [],
-      location: "Full-time",
+      location: "Milan, Italy",
       title: "Full stack developer",
       logoUrl: "/loge.jpg",
       start: "November 2021",
@@ -93,6 +93,18 @@ export const DATA = {
       end: "April 2021",
       description:
         "Top rated Freelancer on Upwork with 100% job success rate and +10K earnings. Developed and maintained web applications for clients using React.js, Node.js, and MongoDB. Collaborated with clients to understand their requirements and deliver high-quality solutions that met their needs.",
+    },
+    {
+      company: "Mars Global",
+      badges: [],
+      href: "",
+      location: "Istanbul, Turkey",
+      title: "Web design and digital marketing",
+      logoUrl: "",
+      start: "March 2017",
+      end: "January 2018",
+      description:
+        "Designed new landing pages and improved SEO of company website which led to 30% more clicks through Google ads for the same budget.",
     },
    
   ],

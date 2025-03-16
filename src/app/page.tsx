@@ -71,7 +71,7 @@ export default function Page() {
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-xl font-bold">Testimonials</h2>
         </BlurFade>
-        <BlurFade delay={BLUR_FADE_DELAY * 4} className="border rounded-lg p-4">
+        <BlurFade delay={BLUR_FADE_DELAY * 4} className="border rounded-lg p-4 mt-5">
           <Markdown className="prose  p-4 py-4 max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
             {DATA.testimonial.quote}
           </Markdown>
