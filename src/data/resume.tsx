@@ -10,7 +10,7 @@ export const DATA = {
   description:
     "",
   summary:
-    "Software engineer with +5 years of experience in building scalable and reliable systems. I have a passion for learning and I am always looking for new challenges.",
+    "Full-stack software engineer with 5+ years of experience in independently designing, developing, and deploying scalable systems. With a strong background in the startup ecosystem, I thrive in fast-paced environments, solving complex problems and delivering results-driven solutions. Passionate about continuous learning and tackling new challenges head-on.",
   avatarUrl: "/me.jpeg",
   skills: [
     "Typescript",
