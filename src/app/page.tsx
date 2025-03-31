@@ -5,7 +5,9 @@ import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { DATA } from "@/data/resume";
+import { CalendarCheckIcon, CalendarDays } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
 
@@ -49,7 +51,7 @@ export default function Page() {
           </Markdown>
         </BlurFade>
       </section>
-      
+
       <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
@@ -58,10 +60,15 @@ export default function Page() {
           <div className="flex flex-wrap gap-1">
             {DATA.skills.map((skill, id) => (
               <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                {id < 8  ?
-                  <Badge key={skill} className={`opacity-950`}>{skill}</Badge>
-                :
-                <Badge key={skill} className={`opacity-60`}>{skill}</Badge>}
+                {id < 8 ? (
+                  <Badge key={skill} className={`opacity-950`}>
+                    {skill}
+                  </Badge>
+                ) : (
+                  <Badge key={skill} className={`opacity-60`}>
+                    {skill}
+                  </Badge>
+                )}
               </BlurFade>
             ))}
           </div>
@@ -71,11 +78,14 @@ export default function Page() {
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-xl font-bold">Testimonials</h2>
         </BlurFade>
-        <BlurFade delay={BLUR_FADE_DELAY * 4} className="border rounded-lg p-4 mt-5">
+        <BlurFade
+          delay={BLUR_FADE_DELAY * 4}
+          className="border rounded-lg p-4 mt-5"
+        >
           <Markdown className="prose  p-4 py-4 max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
             {DATA.testimonial.quote}
           </Markdown>
-          <div className="flex justify-center gap-2">
+          <div className="flex justify-start gap-2 px-4">
             <div>
               <Avatar className="size-12 border">
                 <AvatarImage src={""} alt={DATA.testimonial.author} />
@@ -83,11 +93,18 @@ export default function Page() {
               </Avatar>
             </div>
             <div>
-          <p>{DATA.testimonial.author}</p>
-          <p className="text-xs italic">{DATA.testimonial.title}</p>
-          </div>
+              <p>{DATA.testimonial.author}</p>
+              <p className="text-xs italic">{DATA.testimonial.title}</p>
+            </div>
           </div>
         </BlurFade>
+      </section>
+      <section id="meeting " className="bg-slate-400/10 px-6 py-11 rounded-lg">
+        <BlurFade  delay={BLUR_FADE_DELAY * 3}>
+          <h2 className="text-xl text-center font-bold">Let’s Connect! Free 20-Minute Introductory Call!</h2>
+          <div className="text-center mt-10"><Link target="_blank" href={"https://cal.com/behnoud/introductory-call"}><Button size={"sm"}><CalendarDays className="w-3 h-3 mr-2"/>Book a call</Button></Link></div>
+        </BlurFade>
+      
       </section>
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
@@ -137,7 +154,7 @@ export default function Page() {
           ))}
         </div>
       </section>
-    
+
       <section id="projects">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
@@ -233,14 +250,15 @@ export default function Page() {
                 Get in Touch
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Let&apos;s build something amazing. Reach out now and get a free consultation! send me an email to{" "}
+                Let&apos;s build something amazing. Reach out now and get a free
+                consultation! send me an email to{" "}
                 <Link
                   href={"mailto:hi@behnoud.net"}
                   className="text-blue-500 hover:underline"
                 >
                   hi@behnoud.net
                 </Link>{" "}
-                and I&apos;ll respond in 48 hours. 
+                and I&apos;ll respond in 48 hours.
               </p>
             </div>
           </BlurFade>
