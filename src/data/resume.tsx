@@ -30,7 +30,6 @@ export const DATA = {
     "CI/CD",
     "GCP",
     "REST API",
-    "Microservices",
     "Ai automation",
     
   ],
@@ -42,6 +41,12 @@ export const DATA = {
     email: "hi@behnoud.net",
     tel: "+393381291915",
     social: {
+      contact:{
+        name: "save Contact",
+        url: "/ben.vcf",
+        icon: Icons.contact,
+        navbar: true,
+      },
       GitHub: {
         name: "GitHub",
         url: "https://github.com/Behnoudmst",
