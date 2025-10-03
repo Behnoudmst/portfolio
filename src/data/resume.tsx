@@ -7,8 +7,7 @@ export const DATA = {
   url: "https://behnoud.net",
   location: "Milan, Italy",
   locationLink: "",
-  description:
-    "",
+  description: "",
   summary:
     "Full-stack software engineer with 5+ years of experience in independently designing, developing, and deploying scalable systems. With a strong background in the startup ecosystem, I thrive in fast-paced environments, solving complex problems and delivering results-driven solutions. Passionate about continuous learning and tackling new challenges head-on.",
   avatarUrl: "/me.jpeg",
@@ -31,7 +30,6 @@ export const DATA = {
     "GCP",
     "REST API",
     "Ai automation",
-    
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
@@ -41,7 +39,7 @@ export const DATA = {
     email: "hi@behnoud.net",
     tel: "+393381291915",
     social: {
-      contact:{
+      contact: {
         name: "save Contact",
         url: "/ben.vcf",
         icon: Icons.contact,
@@ -65,16 +63,28 @@ export const DATA = {
         icon: Icons.email,
         navbar: true,
       },
-      instagram:{
+      instagram: {
         name: "Instagram",
         url: "https://www.instagram.com/behnoud.mst",
         icon: Icons.instagram,
         navbar: true,
-      }
+      },
     },
   },
 
   work: [
+    {
+      company: "Abstract (on a project for Luxottica)",
+      href: "https://www.luxottica.com",
+      badges: [],
+      location: "Full Remote",
+      title: "Full stack developer",
+      logoUrl: "/abstract-logo.jpg",
+      start: "February 2025",
+      end: "October 2025",
+      description:
+        "Collaborated with a cross-functional team of ~80 developers, BAs, and QAs to design and implement a large-scale healthcare system for Luxottica. Leveraged React.js for the front-end (+15 micro frontends) and Node.js with Nest.js for the back-end (+18 microservices). Integrated third-party APIs to enhance functionality and streamline operations. Applied Agile methodologies and comprehensive unit testing to ensure timely delivery and maintain high-quality standards.",
+    },
     {
       company: "Log-e Srl",
       href: "",
@@ -111,7 +121,6 @@ export const DATA = {
       description:
         "Designed new landing pages and improved SEO of company website which led to 30% more conversions from Google ads campaign for the same budget.",
     },
-   
   ],
   education: [
     {
@@ -159,8 +168,7 @@ export const DATA = {
         },
       ],
       image: "",
-      video:
-        "/tiktaac.gif",
+      video: "/tiktaac.gif",
     },
     {
       title: "Elegant Menu",
@@ -189,8 +197,7 @@ export const DATA = {
         },
       ],
       image: "",
-      video:
-        "/elegant.gif",
+      video: "/elegant.gif",
     },
     {
       title: "Tiktaac Scanner",
@@ -214,7 +221,7 @@ export const DATA = {
         // },
       ],
       image: "",
-      video:"",
+      video: "",
     },
     {
       title: "Landing page analyzer",
@@ -239,14 +246,14 @@ export const DATA = {
         },
       ],
       image: "",
-      video:"",
+      video: "",
     },
   ],
   testimonial: {
     quote:
       "Behnoud is very knowledgable, responsive, and a pleasure to work with. I found him thru the UpWork platform and quickly realized what a gem we found. He has been an integral part of the success of our website and I highly recommend him to anyone looking for WordPress web developer support. This guy really knows his stuff, and can be trusted to follow thru on time and above expectation. ",
-      author: "Chris Kydd",
-      title: "Associate Published, The Coast News, CA, USA",
+    author: "Chris Kydd",
+    title: "Associate Published, The Coast News, CA, USA",
   },
   // hackathons: [
   //   {
