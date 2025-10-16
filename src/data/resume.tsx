@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon } from "lucide-react";
+import { HomeIcon } from "lucide-react";
 
 export const DATA = {
   name: "Behnoud Mostafaie",
@@ -9,7 +9,7 @@ export const DATA = {
   locationLink: "",
   description: "",
   summary:
-    "Full-stack software engineer with 5+ years of experience in independently designing, developing, and deploying scalable systems. With a strong background in the startup ecosystem, I thrive in fast-paced environments, solving complex problems and delivering results-driven solutions. Passionate about continuous learning and tackling new challenges head-on.",
+    "I'm a full-stack software engineer with over five years of experience designing, developing, and deploying scalable systems end to end. With a solid background in the startup ecosystem, I excel in fast-paced environments, solving complex real-world problems and delivering practical, results-driven solutions. I’m passionate about continuous learning and taking on new challenges with focus and determination.",
   avatarUrl: "/me.jpeg",
   skills: [
     "Typescript",
