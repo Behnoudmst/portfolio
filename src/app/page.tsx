@@ -74,7 +74,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section id="testimonial">
+      {/* <section id="testimonial">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-xl font-bold">Testimonials</h2>
         </BlurFade>
@@ -98,7 +98,7 @@ export default function Page() {
             </div>
           </div>
         </BlurFade>
-      </section>
+      </section> */}
       <section id="meeting " className="bg-slate-400/10 px-6 py-11 rounded-lg">
         <BlurFade  delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-xl text-center font-bold">Let’s Connect! Free 20-Minute Introductory Call!</h2>

@@ -29,7 +29,7 @@ export const DATA = {
     "CI/CD",
     "GCP",
     "REST API",
-    "Ai automation",
+    "Ai automation (n8n)",
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
@@ -72,7 +72,18 @@ export const DATA = {
     },
   },
 
-  work: [
+  work: [{
+     company: "Cosmico (contracted to a2a digital hub)",
+      href: "https://www.a2a.it",
+      badges: [],
+      location: "Hybrid",
+      title: "Full stack developer",
+      logoUrl: "/a2a-logo.png",
+      start: "October 2025",
+      end: "present",
+      description:
+        "Collaborated with the internal team at A2A Digital Hub on various projects, utilizing TypeScript, Tailwind CSS, Next.js, and GitLab on a daily basis.",
+    },
     {
       company: "Abstract (on a project for Luxottica)",
       href: "https://www.luxottica.com",
@@ -201,7 +212,7 @@ export const DATA = {
     },
     {
       title: "Tiktaac Scanner",
-      href: "https://tools.behnoud.net/form/page-tester",
+      href: "#",
       dates: "Jan 2024 - Present",
       active: true,
       description:
