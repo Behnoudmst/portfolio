@@ -17,7 +17,7 @@ export default function Page() {
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
-        <div className="mx-auto w-full max-w-3xl space-y-8">
+        <div className=" w-full  space-y-8">
           <div className="gap-2 flex justify-between">
             <div className="flex-col flex flex-1 space-y-1.5">
               <BlurFadeText
@@ -33,7 +33,7 @@ export default function Page() {
               />
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className="size-28 border">
+              <Avatar className="size-32 border">
                 <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
                 <AvatarFallback>{DATA.initials}</AvatarFallback>
               </Avatar>
@@ -41,7 +41,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section id="about" >
+      <section id="about">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-xl font-bold">About Me</h2>
         </BlurFade>
@@ -99,13 +99,28 @@ export default function Page() {
           </div>
         </BlurFade>
       </section> */}
-      <section id="meeting " className="bg-slate-400/10 px-6 py-11 rounded-lg">
-        <BlurFade  delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl text-center font-bold">Let’s Connect! Free 20-Minute Introductory Call!</h2>
-          <div className="text-center mt-10"><Link target="_blank" href={"https://cal.com/behnoud/introductory-call"}><Button size={"sm"}><CalendarDays className="w-3 h-3 mr-2"/>Book a call</Button></Link></div>
-        </BlurFade>
-      
-      </section>
+      <BlurFade delay={BLUR_FADE_DELAY * 3}>
+        <section
+          id="meeting "
+          className=" space-y-4 md:space-y-0  py-8 border-b border-t flex items-center flex-wrap justify-between rounded-lg"
+        >
+          <div>
+          <h2 className="text-xl  m-0 font-bold">
+            Let’s Connect! 
+          </h2>
+          <p>Free 20-Minute Introductory Call to talk about your goals and how I can help.</p>
+          </div>
+          <Button size={"sm"} asChild className="m-0">
+            <Link
+              target="_blank"
+              href={"https://cal.com/behnoud/introductory-call"}
+            >
+              <CalendarDays className="w-3 h-3 mr-2" />
+              Book a call
+            </Link>
+          </Button>
+        </section>
+      </BlurFade>
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 6}>

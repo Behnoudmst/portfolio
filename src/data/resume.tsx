@@ -21,6 +21,7 @@ export const DATA = {
     "Docker",
     "Git",
     "Linux",
+    "Langchain.js",
     "Electron js",
     "React Native",
     "Expo",
@@ -75,7 +76,7 @@ export const DATA = {
   work: [{
      company: "Cosmico (contracted to a2a digital hub)",
       href: "https://www.a2a.it",
-      badges: [],
+      badges: ['Contract'],
       location: "Hybrid",
       title: "Full stack developer",
       logoUrl: "/a2a-logo.png",
@@ -87,7 +88,7 @@ export const DATA = {
     {
       company: "Abstract (on a project for Luxottica)",
       href: "https://www.luxottica.com",
-      badges: [],
+      badges: ['Contract'],
       location: "Full Remote",
       title: "Full stack developer",
       logoUrl: "/abstract-logo.jpg",
@@ -99,7 +100,7 @@ export const DATA = {
     {
       company: "Log-e Srl",
       href: "",
-      badges: [],
+      badges: ['Full-time'],
       location: "Milan, Italy",
       title: "Full stack developer",
       logoUrl: "/loge.jpg",
@@ -122,7 +123,7 @@ export const DATA = {
     },
     {
       company: "Mars Global",
-      badges: [],
+      badges: ['Full-time'],
       href: "",
       location: "Istanbul, Turkey",
       title: "Web design and digital marketing",
