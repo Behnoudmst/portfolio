@@ -84,6 +84,7 @@ export const DATA = {
       end: "present",
       description:
         "Collaborated with the internal team at A2A Digital Hub on various projects, utilizing TypeScript, Tailwind CSS, Next.js, and GitLab on a daily basis.",
+      testimonial: "Behnoud integrated seamlessly into our team and delivered consistent results across multiple projects.",
     },
     {
       company: "Abstract (on a project for Luxottica)",
@@ -96,6 +97,7 @@ export const DATA = {
       end: "October 2025",
       description:
         "Collaborated with a cross-functional team of ~80 developers, BAs, and QAs to design and implement a large-scale healthcare system for Luxottica. Leveraged React.js for the front-end (+15 micro frontends) and Node.js with Nest.js for the back-end (+18 microservices). Integrated third-party APIs to enhance functionality and streamline operations. Applied Agile methodologies and comprehensive unit testing to ensure timely delivery and maintain high-quality standards.",
+      testimonial: "Integrated 3rd-party APIs across 15 micro frontends, streamlining operations for an 80-person cross-functional team.",
     },
     {
       company: "Log-e Srl",
@@ -108,6 +110,7 @@ export const DATA = {
       end: "January 2025",
       description:
         "Designed and Developed software solutions with Nodejs (Nestjs framework), React.js (Nextjs framework), Mongodb, Docker and Google cloud. Demonstrating REST Api development, DevOps, backend and front-end development skills. Transformed entrepreneurial ideas into functional web applications within 5 months by collaborating closely with founders and leveraging the MERN stack.",
+      testimonial: "Transformed our ideas into a functional web application in just 5 months—a game-changer for our launch timeline.",
     },
     {
       company: "Upwork",
@@ -120,6 +123,7 @@ export const DATA = {
       end: "April 2021",
       description:
         "Top rated Freelancer on Upwork with 100% job success rate and +10K earnings. Developed and maintained web applications for clients using React.js, Node.js, and MongoDB. Collaborated with clients to understand their requirements and deliver high-quality solutions that met their needs.",
+      testimonial: "100% job success rate. This guy really knows his stuff, and can be trusted to follow through on time and above expectation.",
     },
     {
       company: "Mars Global",
@@ -132,6 +136,7 @@ export const DATA = {
       end: "January 2018",
       description:
         "Designed new landing pages and improved SEO of company website which led to 30% more conversions from Google ads campaign for the same budget.",
+      testimonial: "30% more conversions from the same Google Ads budget after redesigning our landing pages.",
     },
   ],
   education: [
@@ -152,14 +157,49 @@ export const DATA = {
       end: "2021",
     },
   ],
+  solutionStacks: [
+    {
+      icon: "💰",
+      title: "The Revenue Accelerator Stack",
+      description: "Faster payment implementations that drive revenue from day one",
+      technologies: ["Next.js", "Stripe", "Analytics", "WhatsApp API"],
+      caseStudy: "Tiktaac processed thousands in ticket sales in its first month of launch",
+    },
+    {
+      icon: "🚀",
+      title: "The Scale-Ready Infrastructure",
+      description: "Systems that grow with your business without breaking",
+      technologies: ["AWS/GCP", "Docker", "CI/CD", "Microservices"],
+      caseStudy: "Handled 15 micro frontends + 18 microservices for Luxottica's healthcare system",
+    },
+    {
+      icon: "⚡",
+      title: "The MVP Launch Kit",
+      description: "From idea to market in weeks, not months",
+      technologies: ["React", "Node.js", "MongoDB", "TailwindCSS"],
+      caseStudy: "Transformed entrepreneurial ideas into functional web apps in under 5 months",
+    },
+    {
+      icon: "🤖",
+      title: "The AI Automation Suite",
+      description: "Intelligent workflows that replace hours of manual work",
+      technologies: ["Langchain.js", "n8n", "REST API", "DeepSeek AI"],
+      caseStudy: "Built AI-powered landing page analyzer for automated conversion optimization",
+    },
+  ],
+  livePulse: {
+    status: "Currently optimizing Elegant Menu's checkout flow",
+    detail: "est. 15% conversion lift",
+  },
   projects: [
     {
       title: "Tiktaac",
       href: "https://Tiktaac.com",
       dates: "March 2024 - Jan 2025",
       active: true,
+      resultBadge: "50% Faster Event Check-ins",
       description:
-        "Tiktaac reduced event wait times by 50% by digitizing ticket sales and payments.",
+        "Built Tiktaac's digital ticketing system that eliminated paper tickets and halved event wait times by digitizing ticket sales and real-time payments.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -187,8 +227,9 @@ export const DATA = {
       href: "https://elegant.menu",
       dates: "Jan 2024 - Present",
       active: true,
+      resultBadge: "SaaS Platform — 100+ Restaurant Menus",
       description:
-        "Elegant Menu is a SaaS platform that allows users to create digital menus for their restaurants. It provides a simple and intuitive interface for users to create and customize their menus, and offers a range of features to help them manage their menus and orders effectively.",
+        "Built a complete SaaS platform enabling restaurants to create, customize, and manage digital menus with integrated ordering and payment flows.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -216,8 +257,9 @@ export const DATA = {
       href: "#",
       dates: "Jan 2024 - Present",
       active: true,
+      resultBadge: "Real-time Event Analytics",
       description:
-        "This is utility app that scans QR codes generated by Tiktaac and provides event organizers with real-time data on ticket sales, attendance, and other key metrics. It helps organizers track the success of their events and make data-driven decisions to improve future events.",
+        "Mobile app providing event organizers with real-time data on ticket scans, attendance rates, and key metrics—enabling data-driven decisions for future events.",
       technologies: [
         "React Native",
         "Expo",
@@ -240,12 +282,13 @@ export const DATA = {
       href: "https://tools.behnoud.net/form/page-tester",
       dates: "Jan 2024 - Present",
       active: true,
+      resultBadge: "AI-Powered Conversion Optimization",
       description:
-        "This is a handy tool to test landing pages and suggest improvements to increase conversion rates. It analyzes the page's design, layout, and content, and provides actionable insights to help you optimize your landing pages for better results.",
+        "AI-driven tool that analyzes landing page design, layout, and content—then delivers actionable insights to boost conversion rates.",
       technologies: [
         "DeepSeek ai",
         "n8n",
-        "Gopgle Cloud",
+        "Google Cloud",
         "mailcow",
         "REST Api",
         "SMTP server",

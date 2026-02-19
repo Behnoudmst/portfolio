@@ -1,46 +1,29 @@
-import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
-import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { DATA } from "@/data/resume";
-import { CalendarCheckIcon, CalendarDays } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
+
+// New components
+import { AudienceHero } from "@/components/audience-hero";
+import { Calculator } from "@/components/calculator";
+import { ProjectFitQuiz } from "@/components/project-fit-quiz";
+import { SolutionStackCard } from "@/components/solution-stack-card";
+import { ValuePack } from "@/components/value-pack";
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
-      <section id="hero">
-        <div className=" w-full  space-y-8">
-          <div className="gap-2 flex justify-between">
-            <div className="flex-col flex flex-1 space-y-1.5">
-              <BlurFadeText
-                delay={BLUR_FADE_DELAY}
-                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-4xl/none"
-                yOffset={8}
-                text={`Hi, I'm Behnoud. I build fast, scalable web apps that turn ideas into real results—let’s build something great together.`}
-              />
-              <BlurFadeText
-                className="max-w-[600px] md:text-xl"
-                delay={BLUR_FADE_DELAY}
-                text={DATA.description}
-              />
-            </div>
-            <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className="size-32 border">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-                <AvatarFallback>{DATA.initials}</AvatarFallback>
-              </Avatar>
-            </BlurFade>
-          </div>
-        </div>
-      </section>
+      {/* 1. Problem-Solution Hero + 2. Audience Toggle */}
+      <AudienceHero />
+
+      {/* 6. Live Project Pulse */}
+      {/* <ProjectPulse /> */}
+
+      {/* About */}
       <section id="about">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-xl font-bold">About Me</h2>
@@ -52,84 +35,70 @@ export default function Page() {
         </BlurFade>
       </section>
 
-      <section id="skills">
+      {/* 3. Solution Stacks (replaces Skills tag cloud) */}
+      <section id="solutions">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
-            <h2 className="text-xl font-bold">Skills</h2>
+            <h2 className="text-xl font-bold">How I Solve Problems</h2>
+            <p className="text-sm text-muted-foreground mt-1">
+              I don&apos;t just list technologies — I combine them into
+              solutions that drive business results.
+            </p>
           </BlurFade>
-          <div className="flex flex-wrap gap-1">
-            {DATA.skills.map((skill, id) => (
-              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                {id < 8 ? (
-                  <Badge key={skill} className={`opacity-950`}>
-                    {skill}
-                  </Badge>
-                ) : (
-                  <Badge key={skill} className={`opacity-60`}>
-                    {skill}
-                  </Badge>
-                )}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
+            {DATA.solutionStacks.map((stack, id) => (
+              <BlurFade
+                key={stack.title}
+                delay={BLUR_FADE_DELAY * 6 + id * 0.05}
+              >
+                <SolutionStackCard
+                  icon={stack.icon}
+                  title={stack.title}
+                  description={stack.description}
+                  technologies={stack.technologies}
+                  caseStudy={stack.caseStudy}
+                />
               </BlurFade>
             ))}
           </div>
         </div>
       </section>
-      {/* <section id="testimonial">
-        <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl font-bold">Testimonials</h2>
-        </BlurFade>
-        <BlurFade
-          delay={BLUR_FADE_DELAY * 4}
-          className="border rounded-lg p-4 mt-5"
-        >
-          <Markdown className="prose  p-4 py-4 max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
-            {DATA.testimonial.quote}
-          </Markdown>
-          <div className="flex justify-start gap-2 px-4">
-            <div>
-              <Avatar className="size-12 border">
-                <AvatarImage src={""} alt={DATA.testimonial.author} />
-                <AvatarFallback>{DATA.testimonial.author[0]}</AvatarFallback>
-              </Avatar>
-            </div>
-            <div>
-              <p>{DATA.testimonial.author}</p>
-              <p className="text-xs italic">{DATA.testimonial.title}</p>
+
+      {/* Client Testimonial */}
+      <section id="testimonial">
+        <BlurFade delay={BLUR_FADE_DELAY * 7}>
+          <div className="border rounded-lg p-5 bg-muted/10">
+            <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert italic">
+              {`"${DATA.testimonial.quote.trim()}"`}
+            </Markdown>
+            <div className="flex items-center gap-2 mt-3">
+              <div>
+                <p className="text-sm font-medium">{DATA.testimonial.author}</p>
+                <p className="text-xs text-muted-foreground">
+                  {DATA.testimonial.title}
+                </p>
+              </div>
             </div>
           </div>
         </BlurFade>
-      </section> */}
-      <BlurFade delay={BLUR_FADE_DELAY * 3}>
-        <section
-          id="meeting "
-          className=" space-y-4 md:space-y-0  py-8 border-b border-t flex items-center flex-wrap justify-between rounded-lg"
-        >
-          <div>
-          <h2 className="text-xl  m-0 font-bold">
-            Let’s Connect! 
-          </h2>
-          <p>Free 20-Minute Introductory Call to talk about your goals and how I can help.</p>
-          </div>
-          <Button size={"sm"} asChild className="m-0">
-            <Link
-              target="_blank"
-              href={"https://cal.com/behnoud/introductory-call"}
-            >
-              <CalendarDays className="w-3 h-3 mr-2" />
-              Book a call
-            </Link>
-          </Button>
-        </section>
-      </BlurFade>
+      </section>
+
+      {/* 4. Pre-Call Value Pack */}
+      <ValuePack />
+
+      {/* 8. Work Experience with Client Voice Hover Effects */}
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 6}>
+          <BlurFade delay={BLUR_FADE_DELAY * 8}>
             <h2 className="text-xl font-bold">Work Experience</h2>
+            <p className="text-sm text-muted-foreground mt-1">
+              Hover over each role to see impact highlights.
+            </p>
           </BlurFade>
           {DATA.work.map((work, id) => (
             <BlurFade
               key={work.company}
-              delay={BLUR_FADE_DELAY * 6 + id * 0.05}
+              delay={BLUR_FADE_DELAY * 8 + id * 0.05}
             >
               <ResumeCard
                 key={work.company}
@@ -141,20 +110,23 @@ export default function Page() {
                 badges={work.badges}
                 period={`${work.start} - ${work.end ?? "Present"}`}
                 description={work.description}
+                testimonial={work.testimonial}
               />
             </BlurFade>
           ))}
         </div>
       </section>
+
+      {/* Education */}
       <section id="education">
         <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 7}>
+          <BlurFade delay={BLUR_FADE_DELAY * 9}>
             <h2 className="text-xl font-bold">Education</h2>
           </BlurFade>
           {DATA.education.map((education, id) => (
             <BlurFade
               key={education.school}
-              delay={BLUR_FADE_DELAY * 8 + id * 0.05}
+              delay={BLUR_FADE_DELAY * 10 + id * 0.05}
             >
               <ResumeCard
                 key={education.school}
@@ -169,7 +141,33 @@ export default function Page() {
           ))}
         </div>
       </section>
+      <section id="calculator">
+        <div className="space-y-6 w-full py-8">
+          <BlurFade delay={BLUR_FADE_DELAY * 13}>
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                  Interactive Tool
+                </div>
+                <h2 className="text-2xl font-bold tracking-tighter sm:text-4xl">
+                  Should You Hire Me as a Co-Founder or Contractor?
+                </h2>
+                <p className="text-muted-foreground text-sm max-w-lg mx-auto">
+                  Answer 4 quick questions and get a personalized recommendation
+                  for the best engagement model for your situation.
+                </p>
+              </div>
+            </div>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 14}>
+            <div className="max-w-lg mx-auto border rounded-lg p-6">
+              <Calculator />
+            </div>
+          </BlurFade>
+        </div>
+      </section>
 
+      {/* 5. Results-First Project Cards */}
       <section id="projects">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
@@ -179,12 +177,11 @@ export default function Page() {
                   My Projects
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Check out my latest work
+                  Results That Speak for Themselves
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  I&apos;ve worked on a variety of projects, from simple
-                  websites to complex web applications. Here are a few of my
-                  favorites.
+                  Every project starts with a business problem and ends with
+                  measurable outcomes. Here&apos;s the proof.
                 </p>
               </div>
             </div>
@@ -204,6 +201,7 @@ export default function Page() {
                   tags={project.technologies}
                   image={project.image}
                   video={project.video}
+                  resultBadge={project.resultBadge}
                   links={project.links}
                 />
               </BlurFade>
@@ -211,71 +209,40 @@ export default function Page() {
           </div>
         </div>
       </section>
-      {/* <section id="hackathons">
-        <div className="space-y-12 w-full py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 13}>
+
+      {/* 9. Build vs Buy Decision Framework */}
+      {/* <BuildVsBuy /> */}
+
+      {/* 10. Project Fit Quiz (replaces "Get in Touch") */}
+      <section id="contact">
+        <div className="space-y-6 w-full py-12">
+          <BlurFade delay={BLUR_FADE_DELAY * 16}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                  Hackathons
-                </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  I like building things
+                  Let&apos;s Find Your Perfect Fit
                 </h2>
-                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  During my time in university, I attended{" "}
-                  {DATA.hackathons.length}+ hackathons. People from around the
-                  country would come together and build incredible things in 2-3
-                  days. It was eye-opening to see the endless possibilities
-                  brought to life by a group of motivated and passionate
-                  individuals.
+                <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Answer 3 quick questions and I&apos;ll show you the best next
+                  step for your project.
                 </p>
               </div>
             </div>
           </BlurFade>
-          <BlurFade delay={BLUR_FADE_DELAY * 14}>
-            <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
-              {DATA.hackathons.map((project, id) => (
-                <BlurFade
-                  key={project.title + project.dates}
-                  delay={BLUR_FADE_DELAY * 15 + id * 0.05}
-                >
-                  <HackathonCard
-                    title={project.title}
-                    description={project.description}
-                    location={project.location}
-                    dates={project.dates}
-                    image={project.image}
-                    links={project.links}
-                  />
-                </BlurFade>
-              ))}
-            </ul>
+          <BlurFade delay={BLUR_FADE_DELAY * 17}>
+            <ProjectFitQuiz />
           </BlurFade>
-        </div>
-      </section> */}
-      <section id="contact">
-        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 16}>
-            <div className="space-y-3">
-              {/* <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                Contact
-              </div> */}
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Get in Touch
-              </h2>
-              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Let&apos;s build something amazing. Reach out now and get a free
-                consultation! send me an email to{" "}
-                <Link
-                  href={"mailto:hi@behnoud.net"}
-                  className="text-blue-500 hover:underline"
-                >
-                  hi@behnoud.net
-                </Link>{" "}
-                and I&apos;ll respond in 48 hours.
-              </p>
-            </div>
+          <BlurFade delay={BLUR_FADE_DELAY * 18}>
+            <p className="text-center text-sm text-muted-foreground mt-4">
+              Prefer email? Reach out at{" "}
+              <Link
+                href="mailto:hi@behnoud.net"
+                className="text-blue-500 hover:underline"
+              >
+                hi@behnoud.net
+              </Link>{" "}
+              — I&apos;ll respond within 48 hours.
+            </p>
           </BlurFade>
         </div>
       </section>
