@@ -43,20 +43,46 @@ export function AudienceHero() {
 
   return (
     <section id="hero">
-      <div className="w-full space-y-6">
+      <div className="w-full space-y-8">
+        {/* Hero Content */}
+        <div className="gap-6 flex justify-between items-start">
+          <div className="flex-col flex flex-1 space-y-4">
+            <div className="space-y-2">
+              <p className="text-sm font-medium text-muted-foreground tracking-wide">
+                Solutions Architect (AI & Automation) — Milan, Italy
+              </p>
+              <h1 className="text-3xl font-bold tracking-tight sm:text-4xl xl:text-[2.75rem]/tight">
+                Tired of developers who build features instead of{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-300">
+                  business results
+                </span>
+                ?
+              </h1>
+            </div>
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-[540px]">
+              I turn technical complexity into revenue-generating applications
+              for startups and scale-ups.
+            </p>
+          </div>
+          <Avatar className="size-28 sm:size-32 border-2 flex-shrink-0 shadow-md">
+            <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
+            <AvatarFallback>{DATA.initials}</AvatarFallback>
+          </Avatar>
+        </div>
+
         {/* Audience Toggle */}
-        <div className="flex items-center gap-2 text-sm text-muted-foreground flex-wrap">
+        <div className="flex items-center gap-2.5 text-sm text-muted-foreground flex-wrap">
           <span>I&apos;m a</span>
-          <div className="inline-flex rounded-lg border bg-muted p-0.5 gap-0.5">
+          <div className="inline-flex rounded-lg border bg-muted/50 p-0.5 gap-0.5">
             {(Object.keys(audienceContent) as Audience[]).map((key) => (
               <button
                 key={key}
                 onClick={() => setAudience(key)}
                 className={cn(
-                  "px-3 py-1 rounded-md text-xs font-medium transition-all duration-200",
+                  "px-3 py-1.5 rounded-md text-xs font-medium transition-all duration-200 cursor-pointer",
                   audience === key
                     ? "bg-foreground text-background shadow-sm"
-                    : "hover:bg-background/50"
+                    : "hover:bg-background/80"
                 )}
               >
                 {audienceContent[key].label}
@@ -72,33 +98,12 @@ export function AudienceHero() {
           </span>
         </div>
 
-        {/* Hero Content */}
-        <div className="gap-4 flex justify-between items-start">
-          <div className="flex-col flex flex-1 space-y-3">
-            <h1 className="text-2xl font-bold tracking-tighter sm:text-4xl xl:text-3xl/tight">
-              Tired of developers who build features instead of business
-              results?
-            </h1>
-            <p className="text-base sm:text-lg text-muted-foreground font-medium leading-relaxed max-w-[600px]">
-              I turn technical complexity into revenue-generating applications
-              for startups and scale-ups.
-            </p>
-            <p className="text-sm text-muted-foreground/80 italic">
-              Full-stack developer who speaks business, not just code.
-            </p>
-          </div>
-          <Avatar className="size-28 sm:size-32 border flex-shrink-0">
-            <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-            <AvatarFallback>{DATA.initials}</AvatarFallback>
-          </Avatar>
-        </div>
-
         {/* Audience-Specific Message */}
-        <div className="border rounded-lg p-4 bg-muted/30 transition-all duration-300">
-          <p className="font-semibold text-sm sm:text-base">
+        <div className="border rounded-xl p-5 bg-gradient-to-br from-muted/30 to-muted/10 transition-all duration-300">
+          <p className="font-semibold text-sm sm:text-base leading-snug">
             {content.headline}
           </p>
-          <p className="text-sm text-muted-foreground mt-1">
+          <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
             {content.subtext}
           </p>
         </div>

@@ -236,7 +236,7 @@ export function Calculator() {
           <button
             key={opt.value}
             onClick={() => handleSelect(i)}
-            className="text-left px-4 py-3 rounded-lg border text-sm hover:bg-muted/50 transition-colors hover:border-foreground/30"
+            className="text-left px-4 py-3 rounded-lg border text-sm cursor-pointer hover:bg-muted/50 hover:border-foreground/30 active:scale-[0.98] transition-all duration-200"
           >
             {opt.label}
           </button>

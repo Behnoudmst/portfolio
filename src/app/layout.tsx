@@ -15,13 +15,13 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   metadataBase: new URL(DATA.url),
   title: {
-    default: "Behnoud Mostafaie | Full stack developer based in Milan, Italy",
+    default: "Behnoud Mostafaie | Solutions Architect (AI & Automation) based in Milan, Italy",
     template: `%s | ${DATA.name}`,
   },
-  description: "Hi, I'm Behnoud Mostafaie, a full stack developer based in Milan, Italy. I'm passionate about building web applications and solving problems. Let's connect!",
+  description: "Hi, I'm Behnoud Mostafaie, a Solutions Architect (AI & Automation) based in Milan, Italy. I'm passionate about building web applications and solving problems. Let's connect!",
   openGraph: {
-    title: `Behnoud Mostafaie | Full stack developer based in Milan, Italy`,
-    description: `Hi, I'm Behnoud Mostafaie, a full stack developer based in Milan, Italy. I'm passionate about building web applications and solving problems. Let's connect!`,
+    title: `Behnoud Mostafaie | Solutions Architect (AI & Automation) based in Milan, Italy`,
+    description: `Hi, I'm Behnoud Mostafaie, a Solutions Architect (AI & Automation) based in Milan, Italy. I'm passionate about building web applications and solving problems. Let's connect!`,
     url: DATA.url,
     siteName: `${DATA.name}`,
     locale: "en_US",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: `${DATA.name}| Full stack developer based in Milan, Italy`,
+    title: `${DATA.name}| Solutions Architect (AI & Automation) based in Milan, Italy`,
     card: "summary_large_image",
   },
   verification: {

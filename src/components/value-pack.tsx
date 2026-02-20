@@ -1,29 +1,33 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import axios from "axios";
 import { CheckCircle2, Download, Mail } from "lucide-react";
 import { useState } from "react";
-
 export function ValuePack() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-        
-      setSubmitted(true);
+      try {
+        await axios.post("https://tools.behnoud.net/webhook-test/technical-audit", { email });
+        setSubmitted(true);
+      } catch (error) {
+        console.error("Something went wrong. Please try again later.", error);
+      }
     }
   };
 
   return (
-    <section id="value-pack" className="py-8">
-      <div className="border rounded-lg p-6 sm:p-8 bg-muted/20">
-        <div className="flex flex-col sm:flex-row gap-6 items-center">
-          <div className="flex-1 space-y-3">
-            <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-xs font-medium">
+    <section id="value-pack">
+      <div className="border rounded-xl p-6 sm:p-8 bg-gradient-to-br from-muted/30 to-muted/5">
+        <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+          <div className="flex-1 space-y-4">
+            <span className="inline-block rounded-full bg-foreground text-background px-4 py-1.5 text-xs font-medium tracking-wide">
               Free Resource
-            </div>
+            </span>
             <h3 className="text-xl sm:text-2xl font-bold tracking-tight">
               Get My Startup Technical Audit Framework
             </h3>

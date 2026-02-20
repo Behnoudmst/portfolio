@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon } from "lucide-react";
+import { Bot, HomeIcon, Rocket, TrendingUp, Zap } from "lucide-react";
 
 export const DATA = {
   name: "Behnoud Mostafaie",
@@ -159,28 +159,28 @@ export const DATA = {
   ],
   solutionStacks: [
     {
-      icon: "💰",
+      icon: <TrendingUp className="size-5" />,
       title: "The Revenue Accelerator Stack",
       description: "Faster payment implementations that drive revenue from day one",
       technologies: ["Next.js", "Stripe", "Analytics", "WhatsApp API"],
       caseStudy: "Tiktaac processed thousands in ticket sales in its first month of launch",
     },
     {
-      icon: "🚀",
+      icon: <Rocket className="size-5" />,
       title: "The Scale-Ready Infrastructure",
       description: "Systems that grow with your business without breaking",
       technologies: ["AWS/GCP", "Docker", "CI/CD", "Microservices"],
       caseStudy: "Handled 15 micro frontends + 18 microservices for Luxottica's healthcare system",
     },
     {
-      icon: "⚡",
+      icon: <Zap className="size-5" />,
       title: "The MVP Launch Kit",
       description: "From idea to market in weeks, not months",
       technologies: ["React", "Node.js", "MongoDB", "TailwindCSS"],
       caseStudy: "Transformed entrepreneurial ideas into functional web apps in under 5 months",
     },
     {
-      icon: "🤖",
+      icon: <Bot className="size-5" />,
       title: "The AI Automation Suite",
       description: "Intelligent workflows that replace hours of manual work",
       technologies: ["Langchain.js", "n8n", "REST API", "DeepSeek AI"],

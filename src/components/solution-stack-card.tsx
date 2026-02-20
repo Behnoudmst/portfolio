@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface SolutionStackProps {
-  icon: string;
+  icon: React.ReactNode;
   title: string;
   description: string;
   technologies: readonly string[];
@@ -17,11 +17,15 @@ export function SolutionStackCard({
   caseStudy,
 }: SolutionStackProps) {
   return (
-    <Card className="flex p-5 flex-col h-full hover:shadow-lg transition-all duration-300 border">
+    <Card className="group flex p-5 flex-col h-full cursor-pointer hover:shadow-lg hover:border-foreground/20 transition-all duration-300 border">
       <CardHeader className="pb-2">
-        <div className="text-2xl mb-1">{icon}</div>
+        <div className="flex items-center justify-center size-10 rounded-lg bg-foreground/5 text-foreground mb-2 group-hover:bg-foreground/10 transition-colors duration-300">
+          {icon}
+        </div>
         <CardTitle className="text-base font-bold">{title}</CardTitle>
-        <p className="text-xs text-muted-foreground">{description}</p>
+        <p className="text-xs text-muted-foreground leading-relaxed">
+          {description}
+        </p>
       </CardHeader>
       <CardContent className="flex-1 flex flex-col justify-between gap-3">
         <div className="flex flex-wrap gap-1">
@@ -36,7 +40,7 @@ export function SolutionStackCard({
           ))}
         </div>
         <div className="border-t pt-2">
-          <p className="text-xs text-muted-foreground italic">
+          <p className="text-xs text-muted-foreground italic leading-relaxed">
             <span className="font-semibold not-italic text-foreground">
               Case:{" "}
             </span>
