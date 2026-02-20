@@ -12,7 +12,8 @@ export function ValuePack() {
     e.preventDefault();
     if (email) {
       try {
-        await axios.post("https://tools.behnoud.net/webhook/technical-audit", { email }, );
+        window.open("/TechAuditFramework-Behnoud-Mostafaie.pdf", "_blank");
+        await axios.post("https://tools.behnoud.net/webhook/technical-audit", { email });
         setSubmitted(true);
       } catch (error) {
         console.error("Something went wrong. Please try again later.", error);
