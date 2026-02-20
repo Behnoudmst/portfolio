@@ -1,3 +1,4 @@
+import { CtaRibbon } from "@/components/cta-ribbon";
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -57,12 +58,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased max-w-5xl mx-auto py-8 sm:py-16 px-4 sm:px-8",
+          "min-h-screen bg-background font-sans antialiased max-w-5xl mx-auto pt-14 sm:pt-16 pb-8 sm:pb-16 px-4 sm:px-8",
           fontSans.variable
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="auto" enableSystem>
           <TooltipProvider delayDuration={0}>
+            <CtaRibbon />
             {children}
             <Navbar />
           </TooltipProvider>
