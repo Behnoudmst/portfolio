@@ -3,10 +3,10 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
-  BookOpen,
-  CalendarDays,
-  Download,
-  RotateCcw
+    BookOpen,
+    CalendarDays,
+    Download,
+    RotateCcw
 } from "lucide-react";
 import { useState } from "react";
 
@@ -50,7 +50,13 @@ type Outcome = "sprint" | "audit" | "resources";
 function getOutcome(answers: string[]): Outcome {
   const [challenge, timeline, budget] = answers;
 
-  // High urgency + clear scope = sprint
+  if (budget === "unsure") {
+    return "audit";
+  }
+  if (budget ==="enterprise" || budget === "medium" ) {
+    return "sprint";
+  }
+
   if (
     (challenge === "build" || challenge === "features") &&
     (timeline === "urgent" || timeline === "soon") &&
@@ -59,7 +65,6 @@ function getOutcome(answers: string[]): Outcome {
     return "sprint";
   }
 
-  // Needs guidance or exploring = resources first
   if (
     challenge === "guidance" ||
     timeline === "exploring" ||
@@ -68,7 +73,6 @@ function getOutcome(answers: string[]): Outcome {
     return "resources";
   }
 
-  // Default = audit
   return "audit";
 }
 
@@ -137,15 +141,15 @@ export function ProjectFitQuiz() {
   if (outcome) {
     const o = outcomes[outcome];
     return (
-      <div className="max-w-lg mx-auto space-y-4">
-        <div className="border rounded-lg p-6 bg-muted/20 space-y-3 text-center">
-          <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-xs font-medium">
+      <div>
+        <div className="border-2 border-foreground p-6 space-y-3">
+          <div className="inline-block bg-foreground text-background px-3 py-1 text-[10px] font-black uppercase tracking-widest">
             {o.badge}
           </div>
-          <h3 className="text-lg font-bold">{o.title}</h3>
-          <p className="text-sm text-muted-foreground">{o.description}</p>
-          <div className="flex flex-wrap gap-2 justify-center pt-2">
-            <Button size="sm" asChild>
+          <h3 className="text-base font-black uppercase tracking-wide">{o.title}</h3>
+          <p className="text-sm text-muted-foreground leading-relaxed">{o.description}</p>
+          <div className="flex flex-wrap gap-2 pt-2">
+            <Button size="sm" className="font-bold uppercase tracking-wider text-xs" asChild>
               <a
                 href={o.ctaLink}
                 target={o.ctaLink.startsWith("http") ? "_blank" : undefined}
@@ -155,8 +159,8 @@ export function ProjectFitQuiz() {
                 {o.cta}
               </a>
             </Button>
-            <Button size="sm" variant="outline" onClick={handleReset}>
-              <RotateCcw className="size-3 mr-1" /> Retake Quiz
+            <Button size="sm" variant="outline" onClick={handleReset} className="font-bold uppercase tracking-wider text-xs border-2 border-foreground">
+              <RotateCcw className="size-3 mr-1" /> Retake
             </Button>
           </div>
         </div>
@@ -167,17 +171,17 @@ export function ProjectFitQuiz() {
   const q = quizQuestions[step];
 
   return (
-    <div className="max-w-lg mx-auto space-y-4">
-      <div className="flex items-center justify-between text-xs text-muted-foreground">
+    <div className="border border-foreground p-6 sm:p-8 bg-background">
+      <div className="flex items-center justify-between text-[10px] text-muted-foreground uppercase tracking-widest font-bold mb-4">
         <span>
-          Step {step + 1} of {quizQuestions.length}
+          Step {step + 1} / {quizQuestions.length}
         </span>
         <div className="flex gap-1">
           {quizQuestions.map((_, i) => (
             <div
               key={i}
               className={cn(
-                "h-1.5 w-6 rounded-full transition-colors",
+                "h-1 w-6 transition-colors",
                 i <= step ? "bg-foreground" : "bg-muted"
               )}
             />
@@ -185,14 +189,14 @@ export function ProjectFitQuiz() {
         </div>
       </div>
 
-      <h4 className="text-base font-semibold text-center">{q.question}</h4>
+      <h4 className="text-sm font-black uppercase tracking-wide mb-4">{q.question}</h4>
 
-      <div className="grid gap-2">
+      <div className="grid gap-[1px] bg-foreground/20">
         {q.options.map((opt) => (
           <button
             key={opt.value}
             onClick={() => handleSelect(opt.value)}
-            className="text-left px-4 py-3 rounded-lg border text-sm cursor-pointer hover:bg-muted/50 hover:border-foreground/30 active:scale-[0.98] transition-all duration-200"
+            className="text-left px-4 py-3 border border-foreground/20 text-sm cursor-pointer hover:bg-foreground hover:text-background transition-colors duration-150 bg-background"
           >
             {opt.label}
           </button>

@@ -16,94 +16,115 @@ const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
   return (
-    <main className="flex flex-col min-h-[100dvh] space-y-16">
-      {/* 1. Problem-Solution Hero + 2. Audience Toggle */}
+    <main className="flex flex-col min-h-[100dvh]">
+      {/* ── HERO ── */}
       <AudienceHero />
 
-      {/* About */}
-      <section id="about">
+      {/* ── GRID DIVIDER ── */}
+      <div className="border-t border-foreground my-0" />
+
+      {/* ── ABOUT ── */}
+      <section id="about" className="py-10 sm:py-14 border-b border-foreground">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl font-bold">About Me</h2>
-        </BlurFade>
-        <BlurFade delay={BLUR_FADE_DELAY * 4}>
-          <Markdown className="prose max-w-full mt-3 text-pretty font-sans text-sm text-muted-foreground dark:prose-invert leading-relaxed">
-            {DATA.summary}
-          </Markdown>
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-8">
+            <div className="sm:col-span-3">
+              <h2 className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">
+                About
+              </h2>
+            </div>
+            <div className="sm:col-span-9">
+              <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert leading-relaxed">
+                {DATA.summary}
+              </Markdown>
+            </div>
+          </div>
         </BlurFade>
       </section>
 
-      {/* 3. Solution Stacks */}
-      <section id="solutions">
-        <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 5}>
-            <div className="space-y-1">
-              <h2 className="text-xl font-bold">How I Solve Problems</h2>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+      {/* ── SOLUTION STACKS ── */}
+      <section id="solutions" className="py-10 sm:py-14 border-b border-foreground">
+        <BlurFade delay={BLUR_FADE_DELAY * 5}>
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-8 mb-6">
+            <div className="sm:col-span-3">
+              <h2 className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">
+                Solutions
+              </h2>
+            </div>
+            <div className="sm:col-span-9">
+              <p className="text-sm text-muted-foreground">
                 I don&apos;t just list technologies — I combine them into
                 solutions that drive business results.
               </p>
             </div>
-          </BlurFade>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
-            {DATA.solutionStacks.map((stack, id) => (
-              <BlurFade
-                key={stack.title}
-                delay={BLUR_FADE_DELAY * 6 + id * 0.05}
-              >
-                <SolutionStackCard
-                  icon={stack.icon}
-                  title={stack.title}
-                  description={stack.description}
-                  technologies={stack.technologies}
-                  caseStudy={stack.caseStudy}
-                />
-              </BlurFade>
-            ))}
           </div>
+        </BlurFade>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-[1px] bg-foreground">
+          {DATA.solutionStacks.map((stack, id) => (
+            <BlurFade
+              key={stack.title}
+              delay={BLUR_FADE_DELAY * 6 + id * 0.05}
+            >
+              <SolutionStackCard
+                icon={stack.icon}
+                title={stack.title}
+                description={stack.description}
+                technologies={stack.technologies}
+                caseStudy={stack.caseStudy}
+              />
+            </BlurFade>
+          ))}
         </div>
       </section>
 
-      {/* Client Testimonial */}
-      <section id="testimonial">
+      {/* ── TESTIMONIAL ── */}
+      <section id="testimonial" className="py-10 sm:py-14 border-b border-foreground">
         <BlurFade delay={BLUR_FADE_DELAY * 7}>
-          <div className="relative border rounded-xl p-6 sm:p-8 bg-gradient-to-br from-muted/20 to-transparent">
-            <div className="absolute top-4 left-5 text-6xl leading-none text-foreground/5 font-serif select-none">
-              &ldquo;
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-8">
+            <div className="sm:col-span-3">
+              <h2 className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">
+                Client Voice
+              </h2>
             </div>
-            <div className="relative">
-              <Markdown className="prose max-w-full text-pretty font-sans text-sm sm:text-base text-muted-foreground dark:prose-invert italic leading-relaxed">
-                {`"${DATA.testimonial.quote.trim()}"`}
-              </Markdown>
-              <div className="flex items-center gap-3 mt-4 pt-4 border-t border-border/50">
-                <div className="size-1.5 rounded-full bg-blue-500" />
-                <div>
-                  <p className="text-sm font-semibold">
+            <div className="sm:col-span-9">
+              <blockquote className="border-l-2 border-foreground pl-6">
+                <Markdown className="prose max-w-full text-pretty font-sans text-base sm:text-lg text-foreground dark:prose-invert italic leading-relaxed font-medium">
+                  {`"${DATA.testimonial.quote.trim()}"`}
+                </Markdown>
+                <footer className="mt-4 flex items-center gap-2">
+                  <span className="inline-block w-4 h-[1px] bg-foreground" />
+                  <cite className="not-italic text-xs font-bold uppercase tracking-[0.15em]">
                     {DATA.testimonial.author}
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    {DATA.testimonial.title}
-                  </p>
-                </div>
-              </div>
+                  </cite>
+                  <span className="text-xs text-muted-foreground">
+                    / {DATA.testimonial.title}
+                  </span>
+                </footer>
+              </blockquote>
             </div>
           </div>
         </BlurFade>
       </section>
 
-      {/* 4. Pre-Call Value Pack */}
+      {/* ── VALUE PACK ── */}
       <ValuePack />
 
-      {/* 8. Work Experience */}
-      <section id="work">
-        <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 8}>
-            <div className="space-y-1">
-              <h2 className="text-xl font-bold">Work Experience</h2>
-              <p className="text-sm text-muted-foreground">
-                Hover over each role to see impact highlights.
+      {/* ── WORK EXPERIENCE ── */}
+      <section id="work" className="py-10 sm:py-14 border-b border-foreground">
+        <BlurFade delay={BLUR_FADE_DELAY * 8}>
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-8 mb-6">
+            <div className="sm:col-span-3">
+              <h2 className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">
+                Experience
+              </h2>
+            </div>
+            <div className="sm:col-span-9">
+              <p className="text-xs text-muted-foreground uppercase tracking-wider">
+                Hover to reveal impact highlights
               </p>
             </div>
-          </BlurFade>
+          </div>
+        </BlurFade>
+        <div className="space-y-0">
           {DATA.work.map((work, id) => (
             <BlurFade
               key={work.company}
@@ -126,12 +147,19 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Education */}
-      <section id="education">
-        <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 9}>
-            <h2 className="text-xl font-bold">Education</h2>
-          </BlurFade>
+      {/* ── EDUCATION ── */}
+      <section id="education" className="py-10 sm:py-14 border-b border-foreground">
+        <BlurFade delay={BLUR_FADE_DELAY * 9}>
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-8 mb-6">
+            <div className="sm:col-span-3">
+              <h2 className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">
+                Education
+              </h2>
+            </div>
+            <div className="sm:col-span-9" />
+          </div>
+        </BlurFade>
+        <div className="space-y-0">
           {DATA.education.map((education, id) => (
             <BlurFade
               key={education.school}
@@ -151,108 +179,124 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 5. Results-First Project Cards */}
-      <section id="projects">
-        <div className="space-y-8 w-full">
-          <BlurFade delay={BLUR_FADE_DELAY * 11}>
-            <div className="flex flex-col items-center justify-center space-y-3 text-center">
-              <div className="space-y-2">
-                <span className="inline-block rounded-full bg-foreground text-background px-4 py-1.5 text-xs font-medium tracking-wide">
-                  My Projects
-                </span>
-                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-                  Results That Speak for Themselves
-                </h2>
-                <p className="text-muted-foreground text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
-                  Every project starts with a business problem and ends with
-                  measurable outcomes. Here&apos;s the proof.
-                </p>
-              </div>
+      {/* ── PROJECTS ── */}
+      <section id="projects" className="py-10 sm:py-14 border-b border-foreground">
+        <BlurFade delay={BLUR_FADE_DELAY * 11}>
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-8 mb-8">
+            <div className="sm:col-span-3">
+              <h2 className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">
+                Projects
+              </h2>
             </div>
-          </BlurFade>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 max-w-[800px] mx-auto">
-            {DATA.projects.map((project, id) => (
-              <BlurFade
-                key={project.title}
-                delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-              >
-                <ProjectCard
-                  href={project.href}
-                  key={project.title}
-                  title={project.title}
-                  description={project.description}
-                  dates={project.dates}
-                  tags={project.technologies}
-                  image={project.image}
-                  video={project.video}
-                  resultBadge={project.resultBadge}
-                  links={project.links}
-                />
-              </BlurFade>
-            ))}
+            <div className="sm:col-span-9">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight leading-none">
+                Results That Speak
+                <br />
+                for Themselves
+              </h3>
+              <p className="text-sm text-muted-foreground mt-3">
+                Every project starts with a business problem and ends with
+                measurable outcomes.
+              </p>
+            </div>
           </div>
+        </BlurFade>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-[1px] bg-foreground">
+          {DATA.projects.map((project, id) => (
+            <BlurFade
+              key={project.title}
+              delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+            >
+              <ProjectCard
+                href={project.href}
+                key={project.title}
+                title={project.title}
+                description={project.description}
+                dates={project.dates}
+                tags={project.technologies}
+                image={project.image}
+                video={project.video}
+                resultBadge={project.resultBadge}
+                links={project.links}
+              />
+            </BlurFade>
+          ))}
         </div>
       </section>
 
-      {/* Calculator */}
-      <section id="calculator">
-        <div className="space-y-6 w-full">
-          <BlurFade delay={BLUR_FADE_DELAY * 13}>
-            <div className="flex flex-col items-center justify-center space-y-3 text-center">
-              <div className="space-y-2">
-                <span className="inline-block rounded-full bg-foreground text-background px-4 py-1.5 text-xs font-medium tracking-wide">
-                  Interactive Tool
-                </span>
-                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-                  Should You Hire Me as a Co-Founder or Contractor?
-                </h2>
-                <p className="text-muted-foreground text-sm max-w-lg mx-auto leading-relaxed">
-                  Answer 4 quick questions and get a personalized recommendation
-                  for the best engagement model for your situation.
-                </p>
+      {/* ── CALCULATOR ── */}
+      <section id="calculator" className="py-10 sm:py-14 border-b border-foreground">
+        <BlurFade delay={BLUR_FADE_DELAY * 13}>
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-8 mb-8">
+            <div className="sm:col-span-3">
+              <h2 className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">
+                Interactive
+              </h2>
+            </div>
+            <div className="sm:col-span-9">
+              <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight leading-tight">
+                Co-Founder or Contractor?
+              </h3>
+              <p className="text-sm text-muted-foreground mt-2">
+                4 questions. Personalized recommendation.
+              </p>
+            </div>
+          </div>
+        </BlurFade>
+        <BlurFade delay={BLUR_FADE_DELAY * 14}>
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-8">
+            <div className="sm:col-span-3" />
+            <div className="sm:col-span-9">
+              <div className="border border-foreground p-6 sm:p-8 bg-background">
+                <Calculator />
               </div>
             </div>
-          </BlurFade>
-          <BlurFade delay={BLUR_FADE_DELAY * 14}>
-            <div className="max-w-lg mx-auto border rounded-xl p-6 bg-gradient-to-br from-muted/10 to-transparent">
-              <Calculator />
-            </div>
-          </BlurFade>
-        </div>
+          </div>
+        </BlurFade>
       </section>
 
-      {/* 10. Project Fit Quiz */}
-      <section id="contact">
-        <div className="space-y-6 w-full pb-16">
-          <BlurFade delay={BLUR_FADE_DELAY * 16}>
-            <div className="flex flex-col items-center justify-center space-y-3 text-center">
-              <div className="space-y-2">
-                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-                  Let&apos;s Find Your Perfect Fit
-                </h2>
-                <p className="mx-auto max-w-[540px] text-muted-foreground text-sm sm:text-base leading-relaxed">
-                  Answer 3 quick questions and I&apos;ll show you the best next
-                  step for your project.
-                </p>
-              </div>
+      {/* ── CONTACT / FIT QUIZ ── */}
+      <section id="contact" className="py-10 sm:py-14 pb-24">
+        <BlurFade delay={BLUR_FADE_DELAY * 16}>
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-8 mb-8">
+            <div className="sm:col-span-3">
+              <h2 className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">
+                Contact
+              </h2>
             </div>
-          </BlurFade>
-          <BlurFade delay={BLUR_FADE_DELAY * 17}>
-            <ProjectFitQuiz />
-          </BlurFade>
-          <BlurFade delay={BLUR_FADE_DELAY * 18}>
-            <p className="text-center text-sm text-muted-foreground mt-4">
-              Prefer email? Reach out at{" "}
+            <div className="sm:col-span-9">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight leading-none">
+                Find Your
+                <br />
+                Perfect Fit
+              </h3>
+              <p className="text-sm text-muted-foreground mt-3">
+                3 quick questions to determine the best next step for your project.
+              </p>
+            </div>
+          </div>
+        </BlurFade>
+        <BlurFade delay={BLUR_FADE_DELAY * 17}>
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-8">
+            <div className="sm:col-span-3" />
+            <div className="sm:col-span-9">
+              <ProjectFitQuiz />
+            </div>
+          </div>
+        </BlurFade>
+        <BlurFade delay={BLUR_FADE_DELAY * 18}>
+          <div className="mt-8 pt-6 border-t border-foreground">
+            <p className="text-xs text-muted-foreground uppercase tracking-wider">
+              Prefer email? →{" "}
               <Link
                 href="mailto:hi@behnoud.net"
-                className="text-blue-500 hover:text-blue-600 hover:underline transition-colors"
+                className="text-foreground font-bold hover:underline underline-offset-4 transition-colors"
               >
                 hi@behnoud.net
-              </Link>{" "}
-              — I&apos;ll respond within 48 hours.
+              </Link>
             </p>
-          </BlurFade>
-        </div>
+          </div>
+        </BlurFade>
       </section>
     </main>
   );

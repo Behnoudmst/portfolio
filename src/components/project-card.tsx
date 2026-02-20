@@ -1,11 +1,4 @@
 import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
@@ -43,11 +36,7 @@ export function ProjectCard({
   className,
 }: Props) {
   return (
-    <Card
-      className={
-        "flex flex-col overflow-hidden border hover:shadow-lg hover:border-foreground/20 transition-all duration-300 ease-out h-full group"
-      }
-    >
+    <div className="flex flex-col overflow-hidden bg-background h-full group hover:bg-muted transition-colors duration-150">
       <Link
         href={href || "#"}
         className={cn("block cursor-pointer", className)}
@@ -58,7 +47,7 @@ export function ProjectCard({
             alt={title}
             width={500}
             height={300}
-            className="pointer-events-none mx-auto h-40 w-full object-cover object-top" // needed because random black line at bottom of video
+            className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
           />
         )}
         {image && (
@@ -71,30 +60,28 @@ export function ProjectCard({
           />
         )}
       </Link>
-      <CardHeader className="px-4">
+      <div className="p-4 flex-1 flex flex-col">
         <div className="space-y-1">
           {resultBadge && (
-            <div className="inline-block mt-2 rounded-md bg-green-100 dark:bg-green-950/40 text-green-800 dark:text-green-300 px-2 py-0.5 text-[11px] font-bold">
-              ↑ {resultBadge}
+            <div className="inline-block bg-foreground text-background px-2 py-0.5 text-[10px] font-black uppercase tracking-widest">
+              {resultBadge}
             </div>
           )}
-          <CardTitle className="mt-1 text-base">{title}</CardTitle>
-          <time className="font-sans text-xs">{dates}</time>
+          <h3 className="text-sm font-black uppercase tracking-wide mt-1">{title}</h3>
+          <time className="font-mono text-[10px] text-muted-foreground uppercase tracking-wider">{dates}</time>
           <div className="hidden font-sans text-xs underline print:visible">
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}
           </div>
-          <Markdown className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
+          <Markdown className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert leading-relaxed">
             {description}
           </Markdown>
         </div>
-      </CardHeader>
-      <CardContent className="mt-auto flex flex-col px-4">
         {tags && tags.length > 0 && (
-          <div className="mt-2 flex flex-wrap gap-1">
+          <div className="mt-3 flex flex-wrap gap-1">
             {tags?.map((tag) => (
               <Badge
-                className="px-1 py-0 text-[10px]"
-                variant="secondary"
+                className="px-1.5 py-0 text-[10px] font-mono border-foreground/30"
+                variant="outline"
                 key={tag}
               >
                 {tag}
@@ -102,13 +89,11 @@ export function ProjectCard({
             ))}
           </div>
         )}
-      </CardContent>
-      <CardFooter className="px-4 pb-4">
         {links && links.length > 0 && (
-          <div className="flex flex-row flex-wrap items-start gap-1">
+          <div className="mt-3 pt-3 border-t border-foreground/20 flex flex-row flex-wrap items-start gap-1">
             {links?.map((link, idx) => (
               <Link href={link?.href} key={idx} target="_blank">
-                <Badge key={idx} className="flex gap-2 px-2 py-1 text-[10px]">
+                <Badge key={idx} className="flex gap-1.5 px-2 py-1 text-[10px] font-bold uppercase tracking-wider">
                   {link.icon}
                   {link.type}
                 </Badge>
@@ -116,7 +101,7 @@ export function ProjectCard({
             ))}
           </div>
         )}
-      </CardFooter>
-    </Card>
+      </div>
+    </div>
   );
 }

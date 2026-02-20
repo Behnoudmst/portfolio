@@ -42,65 +42,67 @@ export function AudienceHero() {
   const content = audienceContent[audience];
 
   return (
-    <section id="hero">
-      <div className="w-full space-y-8">
-        {/* Hero Content */}
-        <div className="gap-6 flex justify-between items-start">
-          <div className="flex-col flex flex-1 space-y-4">
-            <div className="space-y-2">
-              <p className="text-sm font-medium text-muted-foreground tracking-wide">
-                Solutions Architect (AI & Automation) — Milan, Italy
-              </p>
-              <h1 className="text-3xl font-bold tracking-tight sm:text-4xl xl:text-[2.75rem]/tight">
-                Tired of developers who build features instead of{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-300">
-                  business results
-                </span>
-                ?
-              </h1>
-            </div>
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-[540px]">
-              I turn technical complexity into revenue-generating applications
-              for startups and scale-ups.
+    <section id="hero" className="py-12 sm:py-20">
+      <div className="w-full">
+        {/* Top bar: role + avatar */}
+        <div className="flex justify-between items-start gap-6">
+          <div className="flex-1 min-w-0">
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4">
+              Solutions Architect (AI & Automation) — Milan, Italy
             </p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-[0.9]">
+              Tired of devs
+              <br />
+              who build features
+              <br />
+              instead of{" "}
+              <span className="text-foreground underline decoration-2 underline-offset-4">
+                results
+              </span>
+              ?
+            </h1>
           </div>
-          <Avatar className="size-28 sm:size-32 border-2 flex-shrink-0 shadow-md">
+          <Avatar className="size-20 sm:size-24 border-2 border-foreground flex-shrink-0">
             <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
             <AvatarFallback>{DATA.initials}</AvatarFallback>
           </Avatar>
         </div>
 
+        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-[540px] mt-6">
+          I turn technical complexity into revenue-generating applications
+          for startups and scale-ups.
+        </p>
+
         {/* Audience Toggle */}
-        <div className="flex items-center gap-2.5 text-sm text-muted-foreground flex-wrap">
-          <span>I&apos;m a</span>
-          <div className="inline-flex rounded-lg border bg-muted/50 p-0.5 gap-0.5">
+        <div className="flex items-center gap-3 text-sm text-muted-foreground flex-wrap mt-8">
+          <span className="text-xs uppercase tracking-wider font-bold">I&apos;m a</span>
+          <div className="inline-flex border border-foreground">
             {(Object.keys(audienceContent) as Audience[]).map((key) => (
               <button
                 key={key}
                 onClick={() => setAudience(key)}
                 className={cn(
-                  "px-3 py-1.5 rounded-md text-xs font-medium transition-all duration-200 cursor-pointer",
+                  "px-4 py-2 text-xs font-bold uppercase tracking-wider transition-colors duration-150 cursor-pointer border-r border-foreground last:border-r-0",
                   audience === key
-                    ? "bg-foreground text-background shadow-sm"
-                    : "hover:bg-background/80"
+                    ? "bg-foreground text-background"
+                    : "bg-background text-foreground hover:bg-muted"
                 )}
               >
                 {audienceContent[key].label}
               </button>
             ))}
           </div>
-          <span>
+          <span className="text-xs uppercase tracking-wider">
             looking to{" "}
-            <span className="font-semibold text-foreground">
+            <span className="font-black text-foreground">
               {content.action}
-            </span>{" "}
-            my product.
+            </span>
           </span>
         </div>
 
         {/* Audience-Specific Message */}
-        <div className="border rounded-xl p-5 bg-gradient-to-br from-muted/30 to-muted/10 transition-all duration-300">
-          <p className="font-semibold text-sm sm:text-base leading-snug">
+        <div className="border-2 border-foreground p-5 sm:p-6 mt-6 bg-background transition-all duration-200">
+          <p className="font-bold text-sm sm:text-base leading-snug uppercase tracking-wide">
             {content.headline}
           </p>
           <p className="text-sm text-muted-foreground mt-2 leading-relaxed">

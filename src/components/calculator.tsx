@@ -151,7 +151,6 @@ export function Calculator() {
     if (step < questions.length - 1) {
       setStep(step + 1);
     } else {
-      // Calculate result
       let cofounder = 0;
       let contractor = 0;
       newAnswers.forEach((ansIdx, qIdx) => {
@@ -187,19 +186,19 @@ export function Calculator() {
     const r = results[result];
     return (
       <div className="space-y-4">
-        <div className="border rounded-lg p-6 bg-muted/20 space-y-3">
-          <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-xs font-medium">
+        <div className="border-2 border-foreground p-6 space-y-3">
+          <div className="inline-block bg-foreground text-background px-3 py-1 text-[10px] font-black uppercase tracking-widest">
             Your Result
           </div>
-          <h3 className="text-lg font-bold">{r.title}</h3>
-          <p className="text-sm text-muted-foreground">{r.description}</p>
+          <h3 className="text-base font-black uppercase tracking-wide">{r.title}</h3>
+          <p className="text-sm text-muted-foreground leading-relaxed">{r.description}</p>
           <div className="flex flex-wrap gap-2 pt-2">
-            <Button size="sm" asChild>
+            <Button size="sm" className="font-bold uppercase tracking-wider text-xs" asChild>
               <a href={r.ctaLink} target="_blank" rel="noopener">
                 {r.cta} <ArrowRight className="size-3 ml-1" />
               </a>
             </Button>
-            <Button size="sm" variant="outline" onClick={handleReset}>
+            <Button size="sm" variant="outline" onClick={handleReset} className="font-bold uppercase tracking-wider text-xs border-2 border-foreground">
               <RotateCcw className="size-3 mr-1" /> Retake
             </Button>
           </div>
@@ -212,16 +211,16 @@ export function Calculator() {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between text-xs text-muted-foreground">
+      <div className="flex items-center justify-between text-[10px] text-muted-foreground uppercase tracking-widest font-bold">
         <span>
-          Question {step + 1} of {questions.length}
+          Q.{step + 1} / {questions.length}
         </span>
         <div className="flex gap-1">
           {questions.map((_, i) => (
             <div
               key={i}
               className={cn(
-                "h-1.5 w-6 rounded-full transition-colors",
+                "h-1 w-6 transition-colors",
                 i <= step ? "bg-foreground" : "bg-muted"
               )}
             />
@@ -229,14 +228,14 @@ export function Calculator() {
         </div>
       </div>
 
-      <h4 className="text-base font-semibold">{q.question}</h4>
+      <h4 className="text-sm font-black uppercase tracking-wide">{q.question}</h4>
 
-      <div className="grid gap-2">
+      <div className="grid gap-[1px] bg-foreground/20">
         {q.options.map((opt, i) => (
           <button
             key={opt.value}
             onClick={() => handleSelect(i)}
-            className="text-left px-4 py-3 rounded-lg border text-sm cursor-pointer hover:bg-muted/50 hover:border-foreground/30 active:scale-[0.98] transition-all duration-200"
+            className="text-left px-4 py-3 border border-foreground/20 text-sm cursor-pointer hover:bg-foreground hover:text-background transition-colors duration-150 bg-background"
           >
             {opt.label}
           </button>
@@ -244,7 +243,7 @@ export function Calculator() {
       </div>
 
       {step > 0 && (
-        <Button size="sm" variant="ghost" onClick={handleBack}>
+        <Button size="sm" variant="ghost" onClick={handleBack} className="text-xs uppercase tracking-wider font-bold">
           <ArrowLeft className="size-3 mr-1" /> Back
         </Button>
       )}

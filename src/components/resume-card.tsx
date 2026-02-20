@@ -2,7 +2,6 @@
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { ChevronRightIcon } from "lucide-react";
@@ -46,28 +45,28 @@ export const ResumeCard = ({
       className="block cursor-pointer"
       onClick={handleClick}
     >
-      <Card className="flex group hover:border-foreground/20 transition-all duration-300">
+      <div className="flex group border-b border-foreground/20 py-4 hover:bg-muted/10 transition-colors duration-150 px-2">
         <div className="flex-none">
-          <Avatar className="border size-12 m-auto bg-muted-background dark:bg-foreground">
+          <Avatar className="border border-foreground size-10 bg-background">
             <AvatarImage
               src={logoUrl}
               alt={altText}
               className="object-contain"
             />
-            <AvatarFallback>{altText[0]}</AvatarFallback>
+            <AvatarFallback className="text-xs font-bold">{altText[0]}</AvatarFallback>
           </Avatar>
         </div>
         <div className="flex-grow ml-4 items-center flex-col">
-          <CardHeader>
+          <div>
             <div className="flex items-center justify-between gap-x-2 text-base">
-              <h3 className="inline-flex items-center justify-center font-semibold leading-none text-xs sm:text-sm">
+              <h3 className="inline-flex items-center justify-center font-black leading-none text-xs sm:text-sm uppercase tracking-wide">
                 {title}
                 {badges && (
-                  <span className="inline-flex gap-x-1">
+                  <span className="inline-flex gap-x-1 ml-2">
                     {badges.map((badge, index) => (
                       <Badge
-                        variant="secondary"
-                        className="align-middle text-xs"
+                        variant="outline"
+                        className="align-middle text-[10px] font-mono border-foreground/30"
                         key={index}
                       >
                         {badge}
@@ -82,38 +81,37 @@ export const ResumeCard = ({
                   )}
                 />
               </h3>
-              <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-right">
+              <div className="text-[10px] tabular-nums text-muted-foreground text-right font-mono uppercase tracking-wider">
                 {period}
               </div>
             </div>
-            {subtitle && <div className="font-sans text-xs">{subtitle}</div>}
-          </CardHeader>
+            {subtitle && <div className="font-sans text-xs text-muted-foreground mt-0.5">{subtitle}</div>}
+          </div>
           {description && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{
                 opacity: isExpanded ? 1 : 0,
-
                 height: isExpanded ? "auto" : 0,
               }}
               transition={{
                 duration: 0.7,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="mt-2 text-xs sm:text-sm"
+              className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed"
             >
               {description}
             </motion.div>
           )}
           {testimonial && (
-            <div className="mt-2 max-h-0 overflow-hidden opacity-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 ease-out border-l-2 border-foreground/20 pl-3 py-0 group-hover:py-1">
+            <div className="mt-2 max-h-0 overflow-hidden opacity-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 ease-out border-l-2 border-foreground pl-3 py-0 group-hover:py-1">
               <p className="text-xs text-muted-foreground italic">
                 &ldquo;{testimonial}&rdquo;
               </p>
             </div>
           )}
         </div>
-      </Card>
+      </div>
     </Link>
   );
 };
