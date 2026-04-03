@@ -1,0 +1,124 @@
+# Behnoud Mostafaie — Full-Stack Software Engineer
+
+> Personal portfolio and professional profile of Behnoud Mostafaie, a full-stack software engineer based in Milan, Italy with 5+ years of experience building scalable web applications, SaaS platforms, and AI-powered tools.
+
+## About
+
+Behnoud Mostafaie is a full-stack software engineer with over five years of experience designing, developing, and deploying scalable systems end to end. With a solid background in the startup ecosystem, he excels in fast-paced environments, solving complex real-world problems and delivering practical, results-driven solutions. He is passionate about continuous learning and taking on new challenges with focus and determination.
+
+- Website: https://behnoud.net
+- Email: hi@behnoud.net
+- Location: Milan, Italy
+- GitHub: https://github.com/Behnoudmst
+- LinkedIn: https://www.linkedin.com/in/behnoudmostafaie
+- Instagram: https://www.instagram.com/behnoud.mst
+
+## Skills & Technologies
+
+TypeScript, JavaScript, React, Next.js, Node.js, Nest.js, MongoDB, PostgreSQL, Docker, Git, Linux, Langchain.js, Electron.js, React Native, Expo, AWS, GCP, CI/CD, REST API, AI Automation (n8n), TailwindCSS, Shadcn UI, Stripe, WhatsApp API, DeepSeek AI, Microservices, Mongoose
+
+## Work Experience
+
+### Full Stack Developer — Cosmico (contracted to A2A Digital Hub)
+- Period: October 2025 – Present
+- Location: Hybrid (Milan, Italy)
+- Contract role collaborating with the internal team at A2A Digital Hub on various projects using TypeScript, Tailwind CSS, Next.js, and GitLab.
+
+### Full Stack Developer — Abstract (on a project for Luxottica)
+- Period: February 2025 – October 2025
+- Location: Full Remote
+- Contract
+- Collaborated with a cross-functional team of ~80 developers, BAs, and QAs to design and implement a large-scale healthcare system for Luxottica. Built 15+ micro frontends with React.js and 18+ microservices with Node.js/Nest.js. Integrated third-party APIs and applied Agile methodologies with comprehensive unit testing.
+
+### Full Stack Developer — Log-e Srl
+- Period: November 2021 – January 2025
+- Location: Milan, Italy
+- Full-time
+- Designed and developed software solutions with Node.js (Nest.js), React.js (Next.js), MongoDB, Docker, and Google Cloud. Demonstrated REST API development, DevOps, backend and front-end development skills. Transformed entrepreneurial ideas into functional web applications within 5 months.
+
+### Freelance Web Developer — Upwork
+- Period: January 2020 – April 2021
+- Location: Remote
+- Top Rated freelancer with 100% job success rate and $10K+ earnings. Developed and maintained web applications for clients using React.js, Node.js, and MongoDB.
+
+### Web Design & Digital Marketing — Mars Global
+- Period: March 2017 – January 2018
+- Location: Istanbul, Turkey
+- Designed new landing pages and improved SEO, leading to 30% more conversions from Google Ads campaigns for the same budget.
+
+## Education
+
+### Masters Thesis Exchange — Machine Learning
+- Institution: TU Darmstadt (https://www.tu-darmstadt.de/)
+- Period: 2020 – 2021
+
+### Masters Degree — Mechanical Engineering
+- Institution: Sapienza University of Rome (https://www.uniroma1.it)
+- Period: 2018 – 2021
+
+## Projects
+
+### Tiktaac — Digital Ticketing Platform
+- URL: https://tiktaac.com
+- Period: March 2024 – January 2025
+- Result: 50% Faster Event Check-ins
+- Built Tiktaac's digital ticketing system that eliminated paper tickets and halved event wait times by digitizing ticket sales and real-time payments.
+- Technologies: Next.js, TypeScript, MongoDB, Mongoose, TailwindCSS, Stripe, Shadcn UI, WhatsApp API, Node.js, Nest.js
+
+### Elegant Menu — SaaS Restaurant Platform
+- URL: https://elegant.menu
+- Period: January 2024 – Present
+- Result: SaaS Platform — 100+ Restaurant Menus
+- Built a complete SaaS platform enabling restaurants to create, customize, and manage digital menus with integrated ordering and payment flows.
+- Technologies: Next.js, TypeScript, MongoDB, Mongoose, TailwindCSS, Stripe, Shadcn UI, WhatsApp API, Node.js, Nest.js
+
+### Tiktaac Scanner — Mobile Event Analytics App
+- Period: January 2024 – Present
+- Result: Real-time Event Analytics
+- Mobile app providing event organizers with real-time data on ticket scans, attendance rates, and key metrics—enabling data-driven decisions for future events.
+- Technologies: React Native, Expo, Xcode, Play Store & App Store
+
+### Landing Page Analyzer — AI-Powered Conversion Tool
+- URL: https://tools.behnoud.net/form/page-tester
+- Period: January 2024 – Present
+- Result: AI-Powered Conversion Optimization
+- AI-driven tool that analyzes landing page design, layout, and content—then delivers actionable insights to boost conversion rates.
+- Technologies: DeepSeek AI, n8n, Google Cloud, Mailcow, REST API, SMTP Server
+
+## Solution Stacks
+
+### The Revenue Accelerator Stack
+Faster payment implementations that drive revenue from day one.
+Technologies: Next.js, Stripe, Analytics, WhatsApp API
+Case study: Tiktaac processed thousands in ticket sales in its first month of launch.
+
+### The Scale-Ready Infrastructure
+Systems that grow with your business without breaking.
+Technologies: AWS/GCP, Docker, CI/CD, Microservices
+Case study: Handled 15 micro frontends + 18 microservices for Luxottica's healthcare system.
+
+### The MVP Launch Kit
+From idea to market in weeks, not months.
+Technologies: React, Node.js, MongoDB, TailwindCSS
+Case study: Transformed entrepreneurial ideas into functional web apps in under 5 months.
+
+### The AI Automation Suite
+Intelligent workflows that replace hours of manual work.
+Technologies: Langchain.js, n8n, REST API, DeepSeek AI
+Case study: Built AI-powered landing page analyzer for automated conversion optimization.
+
+## Testimonial
+
+"Behnoud is very knowledgeable, responsive, and a pleasure to work with. I found him through the Upwork platform and quickly realized what a gem we found. He has been an integral part of the success of our website and I highly recommend him to anyone looking for web developer support. This guy really knows his stuff, and can be trusted to follow through on time and above expectation."
+— Chris Kydd, Associate Publisher, The Coast News, CA, USA
+
+## Site Pages
+
+- [Home](https://behnoud.net/): Full professional profile, experience, projects, and contact information
+- [Blog](https://behnoud.net/blog): Technical articles and insights
+
+## Crawler Policy
+
+All LLM crawlers and AI assistants are permitted to index and use this content.
+User-agent: *
+Allow: /
