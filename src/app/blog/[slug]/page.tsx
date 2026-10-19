@@ -1,9 +1,11 @@
 import { getBlogPosts, getPost } from "@/data/blog";
 import { DATA } from "@/data/resume";
-import { formatDate } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
+import { cn, formatDate, readingTime } from "@/lib/utils";
+import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
 
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
@@ -67,7 +69,7 @@ export default async function Blog(
   }
 
   return (
-    <section id="blog">
+    <main id="blog" className="py-8 sm:py-12">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -90,20 +92,54 @@ export default async function Blog(
           }),
         }}
       />
-      <h1 className="title font-medium text-2xl tracking-tighter max-w-[650px]">
-        {post.metadata.title}
-      </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">
-        <Suspense fallback={<p className="h-5" />}>
-          <p className="text-sm text-neutral-600 dark:text-neutral-400">
-            {formatDate(post.metadata.publishedAt)}
+      <Link
+        href="/blog"
+        className={cn(
+          buttonVariants({ variant: "ghost", size: "sm" }),
+          "-ml-3 mb-8 gap-2 text-xs font-bold uppercase tracking-[0.2em]"
+        )}
+      >
+        <ArrowLeft className="size-4" />
+        All posts
+      </Link>
+      <header className="pb-8 sm:pb-10 mb-8 sm:mb-10 border-b border-foreground">
+        <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">
+          Blog
+        </p>
+        <h1 className="mt-4 text-3xl sm:text-5xl font-bold tracking-tighter max-w-3xl text-balance">
+          {post.metadata.title}
+        </h1>
+        {post.metadata.summary && (
+          <p className="mt-4 text-base text-muted-foreground max-w-2xl">
+            {post.metadata.summary}
           </p>
-        </Suspense>
-      </div>
+        )}
+        <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
+          <span className="font-medium text-foreground">{DATA.name}</span>
+          <span>·</span>
+          <time dateTime={post.metadata.publishedAt}>
+            {formatDate(post.metadata.publishedAt)}
+          </time>
+          <span>·</span>
+          <span>{readingTime(post.source)}</span>
+        </div>
+      </header>
       <article
-        className="prose dark:prose-invert"
+        className="prose dark:prose-invert max-w-3xl"
         dangerouslySetInnerHTML={{ __html: post.source }}
       ></article>
-    </section>
+      <footer className="mt-12 pt-8 border-t border-foreground">
+        <Link
+          href="/blog"
+          className={cn(
+            buttonVariants({ variant: "outline" }),
+            "gap-2 border-foreground"
+          )}
+        >
+          <ArrowLeft className="size-4" />
+          Back to all posts
+        </Link>
+      </footer>
+    </main>
   );
 }

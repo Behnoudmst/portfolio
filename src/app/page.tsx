@@ -8,6 +8,7 @@ import Markdown from "react-markdown";
 // New components
 import { AudienceHero } from "@/components/audience-hero";
 import { Calculator } from "@/components/calculator";
+import { LatestPosts } from "@/components/latest-posts";
 import { ProjectFitQuiz } from "@/components/project-fit-quiz";
 import { SolutionStackCard } from "@/components/solution-stack-card";
 import { ValuePack } from "@/components/value-pack";
@@ -223,6 +224,9 @@ export default function Page() {
           ))}
         </div>
       </section>
+
+      {/* ── BLOG ── */}
+      <LatestPosts />
 
       {/* ── CALCULATOR ── */}
       <section id="calculator" className="py-10 sm:py-14 border-b border-foreground">

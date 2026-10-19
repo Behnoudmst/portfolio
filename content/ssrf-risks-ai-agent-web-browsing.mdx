@@ -1,0 +1,49 @@
+---
+title: "Why AI Agent Web Browsing Can Open a Door to SSRF"
+publishedAt: "2026-10-19"
+summary: "Learn how giving AI agents the ability to fetch URLs can create Server-Side Request Forgery risk, and how an isolated egress proxy keeps internal networks out of reach."
+---
+
+Engineering teams building AI agents frequently equip them with web browsing capabilities. Allowing a model to dynamically fetch URLs feels like a large expansion of analytical power: the agent can read documentation, check live pages, and pull in context the prompt never contained.
+
+But giving a non-deterministic engine the ability to execute HTTP requests comes with a security tax. Without the right boundaries, you exchange flexibility for a Server-Side Request Forgery (SSRF) vulnerability.
+
+## How agent browsing turns into SSRF
+
+The orchestration layer that executes an agent's tool calls typically runs inside your own infrastructure, often on the same network as internal services. When the model decides to fetch a URL, the request originates from that trusted position, not from the user's machine.
+
+If a malicious user asks the model to summarize a private internal address, the engine may simply comply. It triggers a request from behind your firewall, reads an internal dashboard or admin endpoint, and summarizes the proprietary data back to the attacker. The same applies to cloud metadata endpoints, which can expose credentials to any process that can reach them.
+
+The URL does not even need to come from the user directly. Prompt injection hidden in a web page, document, or email the agent processes can instruct it to fetch an internal address on the attacker's behalf. You pay for a capable assistant by inadvertently creating a proxy for internal network access.
+
+## Isolate agent egress from your core network
+
+A practical heuristic is to isolate agent egress entirely. Never allow an AI to execute network requests directly from your core application environment. Instead:
+
+1. Route all model-generated URLs through a dedicated fetch proxy.
+2. Run that proxy in an isolated network segment with no route to internal services.
+3. Give it only the outbound internet access it needs, and no cloud credentials.
+4. Return fetched content to the agent as data, never as instructions to follow.
+
+Network isolation matters because application-level URL checks alone are easy to get subtly wrong. If the proxy physically cannot reach your internal network, a validation mistake does not become a breach.
+
+## Validate destinations at the proxy
+
+Isolation should be paired with explicit destination rules at the proxy level:
+
+- **Deny private and reserved IP ranges**, including loopback, link-local, RFC 1918 ranges, and their IPv6 equivalents.
+- **Check the resolved IP address, not just the hostname.** A public-looking domain can resolve to an internal address, so validate after DNS resolution and connect to the address you validated to avoid DNS rebinding.
+- **Re-validate every redirect.** A permitted URL can redirect to a forbidden one.
+- **Restrict schemes and ports** to HTTP and HTTPS on standard ports unless there is a specific need.
+- **Prefer allowlists** of known domains when the agent's use case allows it.
+
+## A practical agent browsing checklist
+
+- Keep agent fetch tools out of the network that hosts your core services.
+- Block access to cloud metadata endpoints from any environment the agent can influence.
+- Enforce IP-range rules after DNS resolution and on every redirect hop.
+- Set timeouts and response-size limits on fetched content.
+- Log requested URLs and blocked attempts so you can spot probing.
+- Treat fetched content as untrusted input that may contain prompt injection.
+
+Review your autonomous workflows. Reflect on whether your architecture strictly controls what the engine can fetch, or merely hands an untrusted user a web browser running inside your private network.

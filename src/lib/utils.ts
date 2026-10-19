@@ -35,3 +35,8 @@ export function formatDate(date: string) {
     return `${fullDate} (${yearsAgo}y ago)`;
   }
 }
+
+export function readingTime(html: string) {
+  const words = html.replace(/<[^>]*>/g, " ").trim().split(/\s+/).length;
+  return `${Math.max(1, Math.round(words / 200))} min read`;
+}
