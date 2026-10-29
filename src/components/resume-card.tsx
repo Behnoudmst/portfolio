@@ -16,8 +16,7 @@ interface ResumeCardProps {
   href?: string;
   badges?: readonly string[];
   period: string;
-  description?: string;
-  testimonial?: string;
+  highlights?: readonly string[];
 }
 export const ResumeCard = ({
   logoUrl,
@@ -27,13 +26,12 @@ export const ResumeCard = ({
   href,
   badges,
   period,
-  description,
-  testimonial,
+  highlights,
 }: ResumeCardProps) => {
   const [isExpanded, setIsExpanded] = React.useState(true);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    if (description) {
+    if (highlights) {
       e.preventDefault();
       setIsExpanded(!isExpanded);
     }
@@ -87,8 +85,8 @@ export const ResumeCard = ({
             </div>
             {subtitle && <div className="font-sans text-xs text-muted-foreground mt-0.5">{subtitle}</div>}
           </div>
-          {description && (
-            <motion.div
+          {highlights && (
+            <motion.ul
               initial={{ opacity: 0, height: 0 }}
               animate={{
                 opacity: isExpanded ? 1 : 0,
@@ -98,17 +96,12 @@ export const ResumeCard = ({
                 duration: 0.7,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed"
+              className="mt-3 space-y-1.5 text-xs sm:text-sm text-muted-foreground leading-relaxed list-disc pl-4 marker:text-foreground"
             >
-              {description}
-            </motion.div>
-          )}
-          {testimonial && (
-            <div className="mt-2 max-h-0 overflow-hidden opacity-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 ease-out border-l-2 border-foreground pl-3 py-0 group-hover:py-1">
-              <p className="text-xs text-muted-foreground italic">
-                &ldquo;{testimonial}&rdquo;
-              </p>
-            </div>
+              {highlights.map((highlight) => (
+                <li key={highlight}>{highlight}</li>
+              ))}
+            </motion.ul>
           )}
         </div>
       </div>

@@ -1,4 +1,3 @@
-import { CtaRibbon } from "@/components/cta-ribbon";
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -16,13 +15,13 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   metadataBase: new URL(DATA.url),
   title: {
-    default: "Behnoud Mostafaie | Solutions Architect (AI & Automation) based in Milan, Italy",
+    default: "Behnoud Mostafaie | Senior Full-Stack / Product Engineer in Milan, Italy",
     template: `%s | ${DATA.name}`,
   },
-  description: "Hi, I'm Behnoud Mostafaie, a Solutions Architect (AI & Automation) based in Milan, Italy. I'm passionate about building web applications and solving problems. Let's connect!",
+  description: "Behnoud Mostafaie is a senior full-stack / product engineer in Milan, Italy, building SaaS, enterprise, and AI-powered products with TypeScript, React/Next.js, and Node.js/NestJS since 2021.",
   openGraph: {
-    title: `Behnoud Mostafaie | Solutions Architect (AI & Automation) based in Milan, Italy`,
-    description: `Hi, I'm Behnoud Mostafaie, a Solutions Architect (AI & Automation) based in Milan, Italy. I'm passionate about building web applications and solving problems. Let's connect!`,
+    title: `Behnoud Mostafaie | Senior Full-Stack / Product Engineer in Milan, Italy`,
+    description: `Behnoud Mostafaie is a senior full-stack / product engineer in Milan, Italy, building SaaS, enterprise, and AI-powered products with TypeScript, React/Next.js, and Node.js/NestJS since 2021.`,
     url: DATA.url,
     siteName: `${DATA.name}`,
     locale: "en_US",
@@ -40,7 +39,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: `${DATA.name}| Solutions Architect (AI & Automation) based in Milan, Italy`,
+    title: `${DATA.name} | Senior Full-Stack / Product Engineer in Milan, Italy`,
     card: "summary_large_image",
   },
   verification: {
@@ -64,7 +63,6 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="auto" enableSystem>
           <TooltipProvider delayDuration={0}>
-            <CtaRibbon />
             {children}
             <Navbar />
           </TooltipProvider>

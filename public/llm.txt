@@ -1,120 +1,85 @@
-# Behnoud Mostafaie — Full-Stack Software Engineer
+# Behnoud Mostafaie — Senior Full-Stack / Product Engineer
 
-> Personal portfolio and professional profile of Behnoud Mostafaie, a full-stack software engineer based in Milan, Italy with 5+ years of experience building scalable web applications, SaaS platforms, and AI-powered tools.
+> Personal site and professional profile of Behnoud Mostafaie, a senior full-stack / product engineer based in Milan, Italy, building and operating SaaS, B2B, enterprise, and AI-powered products end to end since 2021. Open to full-time roles.
 
-## About
+## Profile
 
-Behnoud Mostafaie is a full-stack software engineer with over five years of experience designing, developing, and deploying scalable systems end to end. With a solid background in the startup ecosystem, he excels in fast-paced environments, solving complex real-world problems and delivering practical, results-driven solutions. He is passionate about continuous learning and taking on new challenges with focus and determination.
+Product-focused senior full-stack engineer building and operating SaaS, B2B, enterprise, and AI-powered products end to end since 2021. Built and scaled a multi-tenant SaaS product as sole engineer to 5,000+ registered users across 50+ countries, led a 3-engineer team, cut infrastructure costs 70% (€800/mo → €200/mo), and cut release time in half. Experienced across TypeScript, React/Next.js, Node.js/NestJS, data systems, cloud infrastructure, and AI-enabled workflows, with hands-on ownership from product definition through deployment and support. Enterprise delivery includes Luxottica and a2a Digital Hub.
 
 - Website: https://behnoud.net
 - Email: hi@behnoud.net
 - Location: Milan, Italy
 - GitHub: https://github.com/Behnoudmst
 - LinkedIn: https://www.linkedin.com/in/behnoudmostafaie
-- Instagram: https://www.instagram.com/behnoud.mst
 
-## Skills & Technologies
+## Technical Skills
 
-TypeScript, JavaScript, React, Next.js, Node.js, Nest.js, MongoDB, PostgreSQL, Docker, Git, Linux, Langchain.js, Electron.js, React Native, Expo, AWS, GCP, CI/CD, REST API, AI Automation (n8n), TailwindCSS, Shadcn UI, Stripe, WhatsApp API, DeepSeek AI, Microservices, Mongoose
+- Languages: TypeScript, JavaScript, SQL
+- Frontend: React, Next.js (App Router), React Native, Tailwind CSS, design systems, accessibility
+- Backend & Data: Node.js, NestJS, REST APIs, GraphQL, WebSockets, TypeORM, PostgreSQL, MongoDB, Redis
+- AI & Automation: structured document extraction & validation, LangChain, local/cloud LLM providers (Ollama), n8n, Inngest
+- Cloud & Infrastructure: Linux (Ubuntu), self-hosting, Coolify, Mailcow, GCP, Docker, Cloud Run, Vercel, Cloudflare, CI/CD, cost optimisation
+- Testing & Monitoring: Jest, Vitest, Sentry, Winston
+- Integrations: Stripe, Twilio, WhatsApp, Telegram, Supabase, thermal printers
 
-## Work Experience
+## Professional Experience
 
-### Full Stack Developer — Cosmico (contracted to A2A Digital Hub)
-- Period: October 2025 – Present
-- Location: Hybrid (Milan, Italy)
-- Contract role collaborating with the internal team at A2A Digital Hub on various projects using TypeScript, Tailwind CSS, Next.js, and GitLab.
+### Freelance Full-Stack Engineer — Self-Employed
+- Period: March 2025 – Present
+- Location: Milan, Italy · Hybrid
+- Delivered end-to-end web applications and scalable backend services for clients across healthcare, energy, and digital products, using NestJS, TypeORM, MongoDB, PostgreSQL, Next.js, React, and TypeScript on GCP.
+- Past engagement, healthcare (Luxottica): owned a real-time updates feature end-to-end using WebSockets within a microfrontend architecture, delivering as part of an 80-engineer, pan-European Agile team.
+- Past engagement, energy (a2a Digital Hub): built Next.js and TypeScript features alongside the internal product team.
+- Built and maintained reusable React component libraries in Storybook, establishing shared UI patterns adopted across multiple product teams.
 
-### Full Stack Developer — Abstract (on a project for Luxottica)
-- Period: February 2025 – October 2025
-- Location: Full Remote
-- Contract
-- Collaborated with a cross-functional team of ~80 developers, BAs, and QAs to design and implement a large-scale healthcare system for Luxottica. Built 15+ micro frontends with React.js and 18+ microservices with Node.js/Nest.js. Integrated third-party APIs and applied Agile methodologies with comprehensive unit testing.
-
-### Full Stack Developer — Log-e Srl
+### Full-Stack Software Engineer / Technical Lead — Log-e (Startup Studio)
 - Period: November 2021 – January 2025
 - Location: Milan, Italy
-- Full-time
-- Designed and developed software solutions with Node.js (Nest.js), React.js (Next.js), MongoDB, Docker, and Google Cloud. Demonstrated REST API development, DevOps, backend and front-end development skills. Transformed entrepreneurial ideas into functional web applications within 5 months.
+- Cut infrastructure costs 70% (€800/mo → €200/mo) and cut release time in half through containerisation, GCP optimisation, automation, and consistent deployment workflows.
+- Led a team of 3 engineers across multiple SaaS and B2B products, reviewing code and technical decisions and supporting architecture and delivery.
+- Worked directly with founders and stakeholders to translate ambiguous business requirements into technical scope.
 
-### Freelance Web Developer — Upwork
-- Period: January 2020 – April 2021
-- Location: Remote
-- Top Rated freelancer with 100% job success rate and $10K+ earnings. Developed and maintained web applications for clients using React.js, Node.js, and MongoDB.
-
-### Web Design & Digital Marketing — Mars Global
+### Web Design & Digital Marketing — Mars Global Tourism
 - Period: March 2017 – January 2018
-- Location: Istanbul, Turkey
-- Designed new landing pages and improved SEO, leading to 30% more conversions from Google Ads campaigns for the same budget.
+- Location: Istanbul, Türkiye
+- Designed new landing pages and improved the company website's SEO, leading to 30% more conversions from Google Ads campaigns for the same budget.
 
-## Education
+## Product Engineering
 
-### Masters Thesis Exchange — Machine Learning
-- Institution: TU Darmstadt (https://www.tu-darmstadt.de/)
-- Period: 2020 – 2021
-
-### Masters Degree — Mechanical Engineering
-- Institution: Sapienza University of Rome (https://www.uniroma1.it)
-- Period: 2018 – 2021
-
-## Projects
-
-### Tiktaac — Digital Ticketing Platform
-- URL: https://tiktaac.com
-- Period: March 2024 – January 2025
-- Result: 50% Faster Event Check-ins
-- Built Tiktaac's digital ticketing system that eliminated paper tickets and halved event wait times by digitizing ticket sales and real-time payments.
-- Technologies: Next.js, TypeScript, MongoDB, Mongoose, TailwindCSS, Stripe, Shadcn UI, WhatsApp API, Node.js, Nest.js
-
-### Elegant Menu — SaaS Restaurant Platform
+### Elegant Menu — Global multi-tenant restaurant SaaS
 - URL: https://elegant.menu
-- Period: January 2024 – Present
-- Result: SaaS Platform — 100+ Restaurant Menus
-- Built a complete SaaS platform enabling restaurants to create, customize, and manage digital menus with integrated ordering and payment flows.
-- Technologies: Next.js, TypeScript, MongoDB, Mongoose, TailwindCSS, Stripe, Shadcn UI, WhatsApp API, Node.js, Nest.js
+- Role: Full-Stack Product Engineer
+- Designed, built, and operated a multi-tenant platform using Next.js, NestJS, and MongoDB, growing to 5,000+ registered users across 50+ countries.
+- Built an AI-powered PDF ingestion workflow with n8n that extracts and validates structured menu data.
+- Operated the product across GCP/Cloud Run, Vercel, and Cloudflare, owning deployment, infrastructure cost, and production support.
 
-### Tiktaac Scanner — Mobile Event Analytics App
-- Period: January 2024 – Present
-- Result: Real-time Event Analytics
-- Mobile app providing event organizers with real-time data on ticket scans, attendance rates, and key metrics—enabling data-driven decisions for future events.
-- Technologies: React Native, Expo, Xcode, Play Store & App Store
+### Tiktaac — Real-time event management & ticketing platform
+- URL: https://tiktaac.com
+- Role: Full-Stack Engineer (2022)
+- Built a real-time ticketing platform that reached 40,000 users and sold 100,000 tickets in 2 years, using NestJS, React, React Native, and server-sent events (SSE).
+- Built a mobile ticket scanner with Expo for high-volume event check-ins.
+- Led product design and UX, coordinating an external UI designer across web and mobile.
+- Integrated Epson thermal printers for ticketing at the door.
 
-### Landing Page Analyzer — AI-Powered Conversion Tool
-- URL: https://tools.behnoud.net/form/page-tester
-- Period: January 2024 – Present
-- Result: AI-Powered Conversion Optimization
-- AI-driven tool that analyzes landing page design, layout, and content—then delivers actionable insights to boost conversion rates.
-- Technologies: DeepSeek AI, n8n, Google Cloud, Mailcow, REST API, SMTP Server
+## Open-Source & AI Engineering
 
-## Solution Stacks
+### Vekt — Open-source, self-hosted recruiting platform
+- URL: https://vekt.website
+- Designed and built a privacy-focused recruiting platform with self-hosted deployment and GDPR-conscious architecture.
+- Implemented AI-assisted candidate screening, automated email workflows, and event-driven orchestration using Inngest.
+- Architected support for local (Ollama) and cloud LLM providers.
 
-### The Revenue Accelerator Stack
-Faster payment implementations that drive revenue from day one.
-Technologies: Next.js, Stripe, Analytics, WhatsApp API
-Case study: Tiktaac processed thousands in ticket sales in its first month of launch.
+## Education & Certification
 
-### The Scale-Ready Infrastructure
-Systems that grow with your business without breaking.
-Technologies: AWS/GCP, Docker, CI/CD, Microservices
-Case study: Handled 15 micro frontends + 18 microservices for Luxottica's healthcare system.
+- M.S. Mechanical Engineering Design — Sapienza University of Rome, 2021
+- B.S. Mechanical Engineering — Azad University of Tabriz, 2017
+- Google Cloud Fundamentals: Core Infrastructure — Google Cloud
 
-### The MVP Launch Kit
-From idea to market in weeks, not months.
-Technologies: React, Node.js, MongoDB, TailwindCSS
-Case study: Transformed entrepreneurial ideas into functional web apps in under 5 months.
-
-### The AI Automation Suite
-Intelligent workflows that replace hours of manual work.
-Technologies: Langchain.js, n8n, REST API, DeepSeek AI
-Case study: Built AI-powered landing page analyzer for automated conversion optimization.
-
-## Testimonial
-
-"Behnoud is very knowledgeable, responsive, and a pleasure to work with. I found him through the Upwork platform and quickly realized what a gem we found. He has been an integral part of the success of our website and I highly recommend him to anyone looking for web developer support. This guy really knows his stuff, and can be trusted to follow through on time and above expectation."
-— Chris Kydd, Associate Publisher, The Coast News, CA, USA
+Languages: Persian (native), English, Italian
 
 ## Site Pages
 
-- [Home](https://behnoud.net/): Full professional profile, experience, projects, and contact information
+- [Home](https://behnoud.net/): Full professional profile, experience, products, and contact information
 - [Blog](https://behnoud.net/blog): Technical articles and insights
 
 ## Crawler Policy
