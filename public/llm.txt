@@ -4,7 +4,7 @@
 
 ## Profile
 
-Product-focused senior full-stack engineer building and operating SaaS, B2B, enterprise, and AI-powered products end to end since 2021. Built and scaled a multi-tenant SaaS product as sole engineer to 5,000+ registered users across 50+ countries, led a 3-engineer team, cut infrastructure costs 70% (€800/mo → €200/mo), and cut release time in half. Experienced across TypeScript, React/Next.js, Node.js/NestJS, data systems, cloud infrastructure, and AI-enabled workflows, with hands-on ownership from product definition through deployment and support. Enterprise delivery includes Luxottica and a2a Digital Hub.
+Full-stack engineer with 8+ years in software and web, including Linux administration and, since 2021, building SaaS, B2B, enterprise, and AI products end to end. Top Rated on Upwork. As sole engineer, built Elegant Menu, a multi-tenant restaurant SaaS, to 5,000+ registered users across 50+ countries. Delivered enterprise projects for A2A and Luxottica, led a 3-engineer team, cut infrastructure costs 70%, and halved release time.
 
 - Website: https://behnoud.net
 - Email: hi@behnoud.net
@@ -14,68 +14,87 @@ Product-focused senior full-stack engineer building and operating SaaS, B2B, ent
 
 ## Technical Skills
 
-- Languages: TypeScript, JavaScript, SQL
-- Frontend: React, Next.js (App Router), React Native, Tailwind CSS, design systems, accessibility
-- Backend & Data: Node.js, NestJS, REST APIs, GraphQL, WebSockets, TypeORM, PostgreSQL, MongoDB, Redis
-- AI & Automation: structured document extraction & validation, LangChain, local/cloud LLM providers (Ollama), n8n, Inngest
-- Cloud & Infrastructure: Linux (Ubuntu), self-hosting, Coolify, Mailcow, GCP, Docker, Cloud Run, Vercel, Cloudflare, CI/CD, cost optimisation
-- Testing & Monitoring: Jest, Vitest, Sentry, Winston
-- Integrations: Stripe, Twilio, WhatsApp, Telegram, Supabase, thermal printers
+- Languages: TypeScript, JavaScript, SQL, Bash
+- Frontend: React, Next.js (App Router), micro-frontends, React Native, Expo, Tailwind CSS, shadcn/ui, Storybook, design systems, accessibility
+- Backend & Data: Node.js, NestJS, microservices, REST APIs, GraphQL, WebSockets, role-based access control, TypeORM, PostgreSQL, MongoDB, Redis
+- AI & Automation: structured document extraction & validation, LangChain, local/cloud LLM providers (Ollama), RAG, n8n, Inngest, Claude Code, Skills
+- Cloud & Infrastructure: Linux (Ubuntu) server administration, self-hosting, Coolify, GCP, Docker, Cloud Run, Vercel, Cloudflare, CI/CD, Git, Lerna monorepos, cost optimisation
+- Testing & Integrations: Jest, Vitest, Sentry, Stripe, Twilio, WhatsApp, Telegram, Supabase, thermal printers
 
 ## Professional Experience
 
-### Freelance Full-Stack Engineer — Self-Employed
-- Period: March 2025 – Present
-- Location: Milan, Italy · Hybrid
-- Delivered end-to-end web applications and scalable backend services for clients across healthcare, energy, and digital products, using NestJS, TypeORM, MongoDB, PostgreSQL, Next.js, React, and TypeScript on GCP.
-- Past engagement, healthcare (Luxottica): owned a real-time updates feature end-to-end using WebSockets within a microfrontend architecture, delivering as part of an 80-engineer, pan-European Agile team.
-- Past engagement, energy (a2a Digital Hub): built Next.js and TypeScript features alongside the internal product team.
-- Built and maintained reusable React component libraries in Storybook, establishing shared UI patterns adopted across multiple product teams.
+### Freelance Full-Stack Engineer — Freelance (Self-Employed)
+- Period: February 2021 – Present
+- Location: Remote · Part-time
+- Earned Upwork Top Rated status, providing consulting, web design, and development services.
+- Delivered end-to-end web applications and scalable backend services for clients across healthcare, energy, and digital products, including Yorara Beauty and The Coast News Group.
 
-### Full-Stack Software Engineer / Technical Lead — Log-e (Startup Studio)
+### Full-Stack Engineer — A2A (Energy)
+- Period: October 2025 – June 2026
+- Location: Milan, Italy · Hybrid · Contract
+- Led frontend architecture and delivery across 3 enterprise digital-service projects, coordinating with cross-functional teams on shared UI libraries and API contracts.
+- Shipped a library of 20+ reusable React/TypeScript components using Storybook and a shadcn/ui registry, reducing feature delivery time across teams.
+- Integrated complex REST APIs with role-based authentication and authorization.
+
+### Full-Stack Engineer — Abstract (IT Consulting)
+- Period: March 2025 – October 2025
+- Location: Milan, Italy · Remote · Contract
+- Luxottica healthcare platform: owned a real-time updates feature end to end using WebSockets on a large-scale microservices and micro-frontend platform, within an 80-engineer, pan-European Agile team.
+- Built and maintained NestJS, TypeORM, and MongoDB backend services with a focus on data integrity.
+- Developed reusable React/TypeScript components and improved service modularity using a Lerna monorepo.
+
+### Full-Stack Engineer — Log-e (Startup Studio)
 - Period: November 2021 – January 2025
-- Location: Milan, Italy
-- Cut infrastructure costs 70% (€800/mo → €200/mo) and cut release time in half through containerisation, GCP optimisation, automation, and consistent deployment workflows.
-- Led a team of 3 engineers across multiple SaaS and B2B products, reviewing code and technical decisions and supporting architecture and delivery.
-- Worked directly with founders and stakeholders to translate ambiguous business requirements into technical scope.
+- Location: Milan, Italy · On-site · Full-time
+- Cut infrastructure costs 70% (€800/mo → €200/mo) and halved release time across 4+ startup MVPs through right-sizing, containerisation, and deployment automation.
+- Primary engineer on multiple 0-to-1 launches, including Tiktaac and Montrechic Luxury Watches, owning the frontend, NestJS APIs, database design, and cloud architecture.
+- Led a team of 3 engineers across SaaS and B2B products, reviewing code and technical decisions.
+- Worked directly with founders and designers to turn business requirements into specs, user flows, and production SaaS releases.
 
 ### Web Design & Digital Marketing — Mars Global Tourism
 - Period: March 2017 – January 2018
 - Location: Istanbul, Türkiye
-- Designed new landing pages and improved the company website's SEO, leading to 30% more conversions from Google Ads campaigns for the same budget.
+- Raised Google Ads conversions 30% on the same budget with new landing pages and SEO.
+
+### Unix System Administrator — Akay.ir
+- Period: February 2015 – January 2017
+- Location: Tabriz, Iran
+- Administered WordPress hosting servers, including firewalls, security updates, backups, and DNS.
+
+### Web Designer — Self-Employed
+- Period: July 2013 – January 2015
+- Location: Tabriz, Iran
+- Delivered client websites and SEO with Joomla, WordPress, and custom CSS.
 
 ## Product Engineering
 
-### Elegant Menu — Global multi-tenant restaurant SaaS
+### Elegant Menu — QR-based menu & order management SaaS for restaurants and hotels
 - URL: https://elegant.menu
-- Role: Full-Stack Product Engineer
-- Designed, built, and operated a multi-tenant platform using Next.js, NestJS, and MongoDB, growing to 5,000+ registered users across 50+ countries.
+- Role: Full-Stack Engineer (2024 – Present)
+- Built and scaled a multi-tenant SaaS with QR menus, order management, and Stripe payments as sole engineer to 5,000+ registered users across 50+ countries.
 - Built an AI-powered PDF ingestion workflow with n8n that extracts and validates structured menu data.
 - Operated the product across GCP/Cloud Run, Vercel, and Cloudflare, owning deployment, infrastructure cost, and production support.
 
 ### Tiktaac — Real-time event management & ticketing platform
 - URL: https://tiktaac.com
-- Role: Full-Stack Engineer (2022)
-- Built a real-time ticketing platform that reached 40,000 users and sold 100,000 tickets in 2 years, using NestJS, React, React Native, and server-sent events (SSE).
-- Built a mobile ticket scanner with Expo for high-volume event check-ins.
-- Led product design and UX, coordinating an external UI designer across web and mobile.
-- Integrated Epson thermal printers for ticketing at the door.
+- Role: Full-Stack Engineer (February 2024 – January 2025)
+- Built a real-time ticketing platform with WhatsApp integration and QR ticket generation that reached 40,000 users and sold 100,000 tickets in 2 years, using NestJS, React, React Native, and server-sent events (SSE).
+- Built a mobile ticket scanner with Expo and React Native for high-volume check-ins, and integrated Epson thermal ticket printers for door sales.
 
 ## Open-Source & AI Engineering
 
 ### Vekt — Open-source, self-hosted recruiting platform
-- URL: https://vekt.website
-- Designed and built a privacy-focused recruiting platform with self-hosted deployment and GDPR-conscious architecture.
-- Implemented AI-assisted candidate screening, automated email workflows, and event-driven orchestration using Inngest.
-- Architected support for local (Ollama) and cloud LLM providers.
+- URL: https://vekt.eu
+- Designed and built a privacy-focused, GDPR-conscious platform with AI-assisted candidate screening and event-driven workflows using Inngest.
+- Architected support for local (Ollama) and cloud LLM providers, reducing single-provider dependency for privacy-sensitive deployments.
 
 ## Education & Certification
 
-- M.S. Mechanical Engineering Design — Sapienza University of Rome, 2021
+- M.S. Mechanical Engineering Design — Sapienza University of Rome, 2021 (ML thesis at TU Darmstadt)
 - B.S. Mechanical Engineering — Azad University of Tabriz, 2017
 - Google Cloud Fundamentals: Core Infrastructure — Google Cloud
 
-Languages: Persian (native), English, Italian
+Languages: Persian (Native) · Azerbaijani (Native) · Turkish (C1) · English (C1, TOEFL 102) · Italian (B1)
 
 ## Site Pages
 
